@@ -295,7 +295,7 @@ Keep original Telegram filenames in a sidecar JSON during import so ~7k photos c
 mkdirSync(join(root, "hero"), { recursive: true });
 writeFileSync(
   join(root, "hero", "README.md"),
-  `Place muted looping atelier footage at \`atelier.mp4\`. The home hero will pick it up automatically.\n`,
+  `The home background is the chrome AG monogram (CSS 3D, scroll-driven rotateY). Optional \`atelier.mp4\` is unused as a hero plate.\n`,
 );
 
 console.log("media generated");

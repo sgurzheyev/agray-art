@@ -3,7 +3,7 @@ import type { Category } from "@/lib/types";
 
 export function Footer({ categories }: { categories: Category[] }) {
   return (
-    <footer className="mt-auto border-t border-silver/15 bg-ink">
+    <footer className="relative z-10 mt-auto border-t border-silver/15 bg-ink">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
         <div>
           <p className="font-serif text-2xl tracking-[0.3em] text-silver-bright">A.GRAY</p>

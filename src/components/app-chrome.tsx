@@ -22,7 +22,9 @@ export function AppChrome({
   return (
     <>
       <Header navButtons={navButtons} categories={categories} />
-      <main className={pathname === "/" ? "flex-1" : "flex-1 pt-8"}>{children}</main>
+      <main className={pathname === "/" ? "relative z-10 flex-1" : "relative z-10 flex-1 pt-8"}>
+        {children}
+      </main>
       <Footer categories={categories} />
       <AiChat />
     </>

@@ -1,4 +1,4 @@
-const CACHE = "agray-v1";
+const CACHE = "agray-v2";
 const PRECACHE = [
   "/",
   "/catalog",
@@ -6,7 +6,7 @@ const PRECACHE = [
   "/offline",
   "/icons/icon-192.png",
   "/icons/icon-512.png",
-  "/media/hero/poster.svg",
+  "/brand/ag-logo.webp",
 ];
 
 self.addEventListener("install", (event) => {
