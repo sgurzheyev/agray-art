@@ -1,9 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const HERO_VIDEO = "/media/hero/atelier.mp4";
 
 export function HeroMedia() {
-  const [hasVideo, setHasVideo] = useState(true);
+  const [hasVideo, setHasVideo] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch(HERO_VIDEO, { method: "HEAD" })
+      .then((res) => {
+        if (!cancelled && res.ok) setHasVideo(true);
+      })
+      .catch(() => {
+        /* poster only until atelier.mp4 is uploaded */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   return (
     <div className="absolute inset-0">
@@ -21,9 +37,8 @@ export function HeroMedia() {
           loop
           playsInline
           poster="/media/hero/poster.svg"
-          onError={() => setHasVideo(false)}
         >
-          <source src="/media/hero/atelier.mp4" type="video/mp4" />
+          <source src={HERO_VIDEO} type="video/mp4" />
         </video>
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-ink/30" />
