@@ -72,7 +72,8 @@ a {
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
-  background: #050505;
+  isolation: isolate;
+  background: #000;
 }
 
 .hero-backdrop-scene {
@@ -101,10 +102,11 @@ a {
   height: 100%;
   object-fit: contain;
   backface-visibility: visible;
+  mix-blend-mode: screen;
 }
 
 .hero-logo-3d-face {
-  filter: drop-shadow(0 0 34px rgba(198, 214, 232, 0.32));
+  filter: none;
 }
 
 .hero-logo-shine,
@@ -125,6 +127,8 @@ a {
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
   mask-position: center;
+  mask-mode: luminance;
+  -webkit-mask-source-type: luminance;
   background: linear-gradient(
     calc(114deg - var(--ag-spin) * 0.92deg),
     transparent 30%,
@@ -183,15 +187,15 @@ a {
 
 @keyframes ag-metal-in {
   0% {
-    filter: brightness(3.6) grayscale(1) contrast(1.8) drop-shadow(0 0 0 transparent);
+    filter: brightness(3.6) grayscale(1) contrast(1.8);
     opacity: 0.35;
   }
   24% {
-    filter: brightness(1.8) grayscale(0.25) contrast(1.25) drop-shadow(0 0 24px rgba(230, 238, 246, 0.4));
+    filter: brightness(1.8) grayscale(0.25) contrast(1.25);
     opacity: 1;
   }
   100% {
-    filter: drop-shadow(0 0 34px rgba(198, 214, 232, 0.32));
+    filter: none;
     opacity: 1;
   }
 }
