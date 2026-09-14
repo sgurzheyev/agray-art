@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, ShoppingBag, X } from "lucide-react";
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { classNames } from "@/lib/format";
+import { BrandMark } from "@/components/brand-mark";
 import { useCart } from "@/components/cart-provider";
 import { InstallButton } from "@/components/install-prompt";
 import type { Category, SiteButton } from "@/lib/types";
@@ -20,7 +21,6 @@ export function Header({
   const { count, notice } = useCart();
   const [open, setOpen] = useState(false);
   const [glass, setGlass] = useState(0);
-  const markRef = useRef<HTMLImageElement>(null);
   const links = navButtons.length
     ? navButtons
     : [
@@ -29,19 +29,10 @@ export function Header({
       ];
 
   useEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     let raf = 0;
 
     const update = () => {
-      const y = window.scrollY;
-      const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-      const progress = Math.min(1, y / max);
-      setGlass(Math.min(1, y / 140));
-      if (markRef.current) {
-        markRef.current.style.transform = reduced.matches
-          ? "none"
-          : `rotate(${progress * 360}deg)`;
-      }
+      setGlass(Math.min(1, window.scrollY / 140));
     };
 
     const onScroll = () => {
@@ -52,12 +43,10 @@ export function Header({
     update();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
-    reduced.addEventListener("change", update);
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
-      reduced.removeEventListener("change", update);
     };
   }, []);
 
@@ -95,24 +84,14 @@ export function Header({
           href="/"
           className="absolute left-1/2 flex -translate-x-1/2 items-center gap-2 sm:gap-2.5"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            ref={markRef}
-            src="/brand/ag-logo.webp"
-            alt=""
-            aria-hidden="true"
-            width={72}
-            height={72}
-            decoding="async"
-            className="brand-mark h-7 w-7 object-contain sm:h-8 sm:w-8 md:h-9 md:w-9"
-          />
+          <BrandMark className="h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9" size={72} priority />
           <span className="font-serif text-xl tracking-[0.28em] text-silver-bright sm:text-2xl sm:tracking-[0.35em]">
             A.GRAY
           </span>
         </Link>
 
         <div className="flex items-center gap-2">
-          <InstallButton className="btn-glass-ghost hidden items-center gap-1.5 px-3 py-1.5 text-[10px] tracking-[0.2em] uppercase sm:flex" />
+          <InstallButton className="btn-glass-ghost !hidden items-center gap-1.5 px-3 py-1.5 text-[10px] tracking-[0.2em] uppercase sm:!flex" />
           <Link
             href="/cart"
             className="relative flex size-10 items-center justify-center text-ivory hover:text-silver"

@@ -66,10 +66,17 @@ a {
   transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
+.brand-mark-wrap {
+  perspective: 900px;
+  transform-style: preserve-3d;
+}
+
 .brand-mark {
   display: block;
   transform-origin: 50% 50%;
-  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+  will-change: transform;
 }
 
 .btn-glass,
