@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HeroMedia } from "@/components/hero-media";
 import { ProductCard } from "@/components/product-card";
 import { getFeatured, getSiteButtons, getVisibleCategories, loadCatalog } from "@/lib/catalog";
 import { categoryCover } from "@/lib/products";
@@ -18,7 +19,9 @@ export default async function HomePage() {
 
   return (
     <div>
-      <section className="relative min-h-[88dvh]">
+      <HeroMedia />
+      <div className="relative z-10">
+      <section className="min-h-[88dvh]">
         <div className="relative mx-auto flex min-h-[88dvh] max-w-6xl flex-col justify-end px-4 pb-16 sm:px-6 sm:pb-24">
           <p className="text-[11px] tracking-[0.42em] text-silver uppercase">Ювелирный дом · Москва</p>
           <h1 className="mt-4 font-serif text-5xl leading-none text-ivory sm:text-7xl">A.GRAY</h1>
@@ -104,6 +107,7 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 }

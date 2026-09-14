@@ -89,8 +89,8 @@ a {
   aspect-ratio: 1;
   transform-style: preserve-3d;
   will-change: transform;
-  opacity: 0.48;
-  filter: saturate(1.06) blur(0.4px);
+  opacity: 0.62;
+  filter: saturate(1.08);
 }
 
 .hero-logo-3d-layer {
