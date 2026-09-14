@@ -3,26 +3,26 @@
   <rect width="800" height="1000" fill="#050505"/>
   <defs>
     <radialGradient id="g" cx="50%" cy="38%" r="55%">
-      <stop offset="0%" stop-color="#1a160c"/>
+      <stop offset="0%" stop-color="#16181e"/>
       <stop offset="70%" stop-color="#050505"/>
     </radialGradient>
-    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#e4c87a"/>
-      <stop offset="45%" stop-color="#c9a962"/>
-      <stop offset="100%" stop-color="#8a7340"/>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef2f7"/>
+      <stop offset="45%" stop-color="#c9d0db"/>
+      <stop offset="100%" stop-color="#7b8492"/>
     </linearGradient>
     <filter id="soft">
       <feGaussianBlur stdDeviation="0.6"/>
     </filter>
   </defs>
   <rect width="800" height="1000" fill="url(#g)"/>
-  <rect x="28" y="28" width="744" height="944" fill="none" stroke="#c9a962" stroke-opacity="0.22"/>
-  <rect x="36" y="36" width="728" height="928" fill="none" stroke="#c9a962" stroke-opacity="0.08"/>
+  <rect x="28" y="28" width="744" height="944" fill="none" stroke="#c9d0db" stroke-opacity="0.22"/>
+  <rect x="36" y="36" width="728" height="928" fill="none" stroke="#c9d0db" stroke-opacity="0.08"/>
   
-    <ellipse cx="310" cy="460" rx="70" ry="160" fill="none" stroke="url(#gold)" stroke-width="14"/>
-    <ellipse cx="490" cy="460" rx="70" ry="160" fill="none" stroke="url(#gold)" stroke-width="14"/>
-    <circle cx="310" cy="300" r="8" fill="#e4c87a"/>
-    <circle cx="490" cy="300" r="8" fill="#e4c87a"/>
+    <ellipse cx="310" cy="460" rx="70" ry="160" fill="none" stroke="url(#silver)" stroke-width="14"/>
+    <ellipse cx="490" cy="460" rx="70" ry="160" fill="none" stroke="url(#silver)" stroke-width="14"/>
+    <circle cx="310" cy="300" r="8" fill="#eef2f7"/>
+    <circle cx="490" cy="300" r="8" fill="#eef2f7"/>
   
-  <text x="400" y="930" text-anchor="middle" fill="#c9a962" fill-opacity="0.55" font-family="Georgia, serif" font-size="18" letter-spacing="6">STELLA  ·  AG-E-3419</text>
+  <text x="400" y="930" text-anchor="middle" fill="#c9d0db" fill-opacity="0.55" font-family="Georgia, serif" font-size="18" letter-spacing="6">STELLA  ·  AG-E-3419</text>
 </svg>

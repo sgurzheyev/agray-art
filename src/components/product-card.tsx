@@ -11,21 +11,23 @@ export function ProductCard({ product }: { product: Product }) {
         <img
           src={productImage(product, 1)}
           alt={product.name}
-          className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full bg-black object-contain object-center transition duration-700 group-hover:scale-[1.03]"
         />
-        <div className="pointer-events-none absolute inset-0 ring-1 ring-gold/15 ring-inset" />
+        <div className="pointer-events-none absolute inset-0 product-chrome" />
       </div>
       <div className="mt-4 flex items-start justify-between gap-3">
         <div>
-          <p className="text-[10px] tracking-[0.22em] text-gold/80 uppercase">
+          <p className="text-[10px] tracking-[0.22em] text-silver/80 uppercase">
             {product.categoryName ?? product.category}
           </p>
-          <h3 className="mt-1 font-serif text-xl text-ivory group-hover:text-gold">
+          <h3 className="mt-1 font-serif text-xl text-ivory group-hover:text-silver-bright">
             {product.name}
           </h3>
           <p className="mt-1 text-xs tracking-widest text-muted">{product.sku}</p>
         </div>
-        <p className="shrink-0 text-sm text-gold">{formatPrice(product.price)}</p>
+        <p className="shrink-0 text-sm text-silver">{formatPrice(product.price)}</p>
       </div>
     </Link>
   );

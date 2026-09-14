@@ -31,7 +31,7 @@ export default async function CategoryPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-      <p className="text-[11px] tracking-[0.28em] text-gold uppercase">{cat.nameEn}</p>
+      <p className="text-[11px] tracking-[0.28em] text-silver uppercase">{cat.nameEn}</p>
       <h1 className="mt-2 font-serif text-4xl text-ivory sm:text-5xl">{cat.name}</h1>
       <p className="mt-3 max-w-xl text-sm text-muted">{cat.blurb}</p>
       <div className="mt-10">

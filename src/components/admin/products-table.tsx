@@ -66,9 +66,9 @@ export function ProductsTable() {
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Поиск"
-          className="border border-gold/20 bg-transparent px-3 py-2 text-sm outline-none focus:border-gold sm:w-64"
+          className="border border-silver/20 bg-transparent px-3 py-2 text-sm outline-none focus:border-silver sm:w-64"
         />
-        <Link href="/admin/products/new" className="bg-gold px-4 py-2 text-center text-xs tracking-[0.2em] text-ink uppercase">
+        <Link href="/admin/products/new" className="btn-glass px-4 py-2 text-center text-xs tracking-[0.2em]">
           Создать
         </Link>
       </div>
@@ -83,11 +83,11 @@ export function ProductsTable() {
               <th />
             </tr>
           </thead>
-          <tbody className="divide-y divide-gold/10">
+          <tbody className="divide-y divide-silver/10">
             {list.map((r) => (
               <tr key={r.id} className="text-ivory/90">
                 <td className="py-3">
-                  <Link href={`/admin/products/${r.id}`} className="hover:text-gold">
+                  <Link href={`/admin/products/${r.id}`} className="hover:text-silver">
                     {r.title_ru}
                   </Link>
                   <p className="text-xs text-muted">{r.sku}</p>
@@ -98,7 +98,7 @@ export function ProductsTable() {
                     value={r.status}
                     disabled={busy === r.id}
                     onChange={(e) => patch(r.id, { status: e.target.value })}
-                    className="border border-gold/20 bg-ink px-2 py-1 text-xs"
+                    className="border border-silver/20 bg-ink px-2 py-1 text-xs"
                   >
                     <option value="published">опубл.</option>
                     <option value="draft">черновик</option>
@@ -108,14 +108,14 @@ export function ProductsTable() {
                 <td>
                   <button
                     type="button"
-                    className={r.featured ? "text-gold" : "text-muted"}
+                    className={r.featured ? "text-silver" : "text-muted"}
                     onClick={() => patch(r.id, { featured: !r.featured })}
                   >
                     {r.featured ? "★" : "☆"}
                   </button>
                 </td>
                 <td className="text-right">
-                  <button type="button" className="text-xs text-muted hover:text-gold" onClick={() => remove(r.id)}>
+                  <button type="button" className="text-xs text-muted hover:text-silver" onClick={() => remove(r.id)}>
                     Удалить
                   </button>
                 </td>

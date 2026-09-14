@@ -43,30 +43,30 @@ export function LoginForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-4">
       <label className="block">
-        <span className="text-[11px] tracking-[0.22em] text-gold uppercase">Email</span>
+        <span className="text-[11px] tracking-[0.22em] text-silver uppercase">Email</span>
         <input
           type="email"
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="mt-2 w-full border border-gold/25 bg-transparent px-3 py-3 text-ivory outline-none focus:border-gold"
+          className="mt-2 w-full border border-silver/25 bg-transparent px-3 py-3 text-ivory outline-none focus:border-silver"
         />
       </label>
       <label className="block">
-        <span className="text-[11px] tracking-[0.22em] text-gold uppercase">Пароль</span>
+        <span className="text-[11px] tracking-[0.22em] text-silver uppercase">Пароль</span>
         <input
           type="password"
           required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="mt-2 w-full border border-gold/25 bg-transparent px-3 py-3 text-ivory outline-none focus:border-gold"
+          className="mt-2 w-full border border-silver/25 bg-transparent px-3 py-3 text-ivory outline-none focus:border-silver"
         />
       </label>
       {error && <p className="text-sm text-red-400">{error}</p>}
       <button
         type="submit"
         disabled={busy}
-        className="w-full bg-gold py-3 text-xs tracking-[0.28em] text-ink uppercase disabled:opacity-60"
+        className="btn-glass w-full py-3 text-xs tracking-[0.28em] disabled:opacity-60"
       >
         {busy ? "Вход…" : "Войти"}
       </button>

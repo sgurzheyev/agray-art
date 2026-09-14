@@ -55,7 +55,7 @@ export function MediaLibrary() {
         {rows.map((row) => {
           const product = Array.isArray(row.products) ? row.products[0] : row.products;
           return (
-            <figure key={row.id} className="border border-gold/15 bg-black">
+            <figure key={row.id} className="border border-silver/15 bg-black">
               {row.kind === "video" ? (
                 <video src={row.url} className="aspect-square w-full object-cover" />
               ) : (
@@ -63,7 +63,7 @@ export function MediaLibrary() {
                 <img src={row.url} alt="" className="aspect-square w-full object-cover" />
               )}
               <figcaption className="p-2 text-[10px] text-muted">
-                <Link href={`/admin/products/${row.product_id}`} className="text-ivory hover:text-gold">
+                <Link href={`/admin/products/${row.product_id}`} className="text-ivory hover:text-silver">
                   {product?.sku ?? "—"}
                 </Link>
                 <button type="button" className="ml-2 uppercase" onClick={() => remove(row)}>

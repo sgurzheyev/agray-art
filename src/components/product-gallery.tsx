@@ -40,14 +40,14 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
         <img
           src={images[active]}
           alt={alt}
-          className="h-full w-full object-cover transition-transform duration-200 ease-out"
+          className="h-full w-full bg-black object-contain transition-transform duration-200 ease-out"
           style={{
             transform: hover ? "scale(1.7)" : "scale(1)",
             transformOrigin: origin,
           }}
         />
-        <div className="pointer-events-none absolute inset-0 ring-1 ring-gold/20 ring-inset" />
-        <span className="absolute right-3 bottom-3 inline-flex items-center gap-1 bg-ink/70 px-2 py-1 text-[10px] tracking-widest text-gold uppercase">
+        <div className="pointer-events-none absolute inset-0 product-chrome" />
+        <span className="absolute right-3 bottom-3 inline-flex items-center gap-1 border border-silver/25 bg-ink/55 px-2 py-1 text-[10px] tracking-widest text-silver uppercase backdrop-blur-md">
           <ZoomIn className="size-3" />
           Zoom
         </span>
@@ -61,11 +61,11 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
               onClick={() => setActive(i)}
               className={classNames(
                 "aspect-square overflow-hidden bg-black ring-1",
-                i === active ? "ring-gold" : "ring-gold/15",
+                i === active ? "ring-silver" : "ring-silver/15",
               )}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt="" className="h-full w-full object-cover" />
+              <img src={src} alt="" className="h-full w-full bg-black object-contain" />
             </button>
           ))}
         </div>
@@ -78,11 +78,11 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
           aria-modal="true"
           aria-label="Галерея"
         >
-          <div className="flex items-center justify-between px-4 py-3 text-gold">
+          <div className="flex items-center justify-between px-4 py-3 text-silver">
             <div className="flex items-center gap-2">
               <button
                 type="button"
-                className="border border-gold/30 p-2 hover:bg-gold/10"
+                className="border border-silver/30 p-2 hover:bg-silver/10"
                 onClick={() => setLightboxZoom((z) => Math.max(1, z - 0.4))}
                 aria-label="Уменьшить"
               >
@@ -90,7 +90,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
               </button>
               <button
                 type="button"
-                className="border border-gold/30 p-2 hover:bg-gold/10"
+                className="border border-silver/30 p-2 hover:bg-silver/10"
                 onClick={() => setLightboxZoom((z) => Math.min(3, z + 0.4))}
                 aria-label="Увеличить"
               >

@@ -83,23 +83,23 @@ export function CategoriesEditor() {
   return (
     <div>
       {error && <p className="mb-4 text-sm text-red-400">{error}</p>}
-      <button type="button" onClick={add} className="mb-6 border border-gold px-4 py-2 text-xs tracking-[0.2em] text-gold uppercase">
+      <button type="button" onClick={add} className="mb-6 border border-silver px-4 py-2 text-xs tracking-[0.2em] text-silver uppercase">
         Добавить категорию
       </button>
       <ul className="space-y-6">
         {rows.map((row, i) => (
-          <li key={row.id} className="border border-gold/20 p-4">
+          <li key={row.id} className="border border-silver/20 p-4">
             <div className="flex flex-wrap items-center gap-2">
-              <button type="button" className="text-gold" onClick={() => move(i, -1)}>
+              <button type="button" className="text-silver" onClick={() => move(i, -1)}>
                 ↑
               </button>
-              <button type="button" className="text-gold" onClick={() => move(i, 1)}>
+              <button type="button" className="text-silver" onClick={() => move(i, 1)}>
                 ↓
               </button>
               <input
                 value={row.name_ru}
                 onChange={(e) => patch(row.id, { name_ru: e.target.value })}
-                className="flex-1 border border-gold/20 bg-transparent px-2 py-1 font-serif text-xl outline-none"
+                className="flex-1 border border-silver/20 bg-transparent px-2 py-1 font-serif text-xl outline-none"
               />
               <label className="text-xs text-muted">
                 <input
@@ -110,7 +110,7 @@ export function CategoriesEditor() {
                 />
                 видна
               </label>
-              <button type="button" className="text-xs tracking-widest text-gold uppercase" onClick={() => save(row)}>
+              <button type="button" className="text-xs tracking-widest text-silver uppercase" onClick={() => save(row)}>
                 Сохранить
               </button>
             </div>
@@ -118,17 +118,17 @@ export function CategoriesEditor() {
               <input
                 value={row.slug}
                 onChange={(e) => patch(row.id, { slug: e.target.value })}
-                className="border border-gold/15 bg-transparent px-2 py-1 text-xs"
+                className="border border-silver/15 bg-transparent px-2 py-1 text-xs"
               />
               <input
                 value={row.name_en}
                 onChange={(e) => patch(row.id, { name_en: e.target.value })}
-                className="border border-gold/15 bg-transparent px-2 py-1 text-xs"
+                className="border border-silver/15 bg-transparent px-2 py-1 text-xs"
               />
               <input
                 value={row.blurb_ru}
                 onChange={(e) => patch(row.id, { blurb_ru: e.target.value })}
-                className="border border-gold/15 bg-transparent px-2 py-1 text-xs sm:col-span-1"
+                className="border border-silver/15 bg-transparent px-2 py-1 text-xs sm:col-span-1"
               />
             </div>
           </li>

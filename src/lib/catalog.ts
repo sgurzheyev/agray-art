@@ -127,7 +127,6 @@ async function fetchFromSupabase() {
     console.error("Supabase catalog error", cats.error ?? prods.error);
     return null;
   }
-  if (!cats.data?.length && !prods.data?.length) return null;
 
   const categories = (cats.data as CategoryRow[]).map(mapCategory);
   const products = (prods.data as ProductRow[]).map(mapProduct);
@@ -147,7 +146,12 @@ async function fetchFromSupabase() {
 export const loadCatalog = cache(async () => {
   if (isSupabaseConfigured()) {
     const remote = await fetchFromSupabase();
-    if (remote && remote.products.length > 0) return remote;
+    if (remote) {
+      return {
+        ...remote,
+        categories: remote.categories.length ? remote.categories : localCategories,
+      };
+    }
   }
   return {
     categories: localCategories,

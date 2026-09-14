@@ -40,23 +40,23 @@ export default async function ProductPage({ params }: Props) {
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
       <p className="text-[11px] tracking-[0.22em] text-muted uppercase">
-        <Link href="/catalog" className="hover:text-gold">
+        <Link href="/catalog" className="hover:text-silver">
           Каталог
         </Link>
         {" / "}
-        <Link href={`/catalog/${product.category}`} className="hover:text-gold">
+        <Link href={`/catalog/${product.category}`} className="hover:text-silver">
           {product.categoryName ?? product.category}
         </Link>
       </p>
       <div className="mt-6 grid gap-10 lg:grid-cols-2 lg:gap-16">
         <ProductGallery images={productImages(product)} alt={product.name} />
         <div>
-          <p className="text-[11px] tracking-[0.28em] text-gold uppercase">
+          <p className="text-[11px] tracking-[0.28em] text-silver uppercase">
             {product.categoryName ?? product.category}
           </p>
           <h1 className="mt-2 font-serif text-4xl text-ivory sm:text-5xl">{product.name}</h1>
           <p className="mt-5 text-sm leading-relaxed text-muted">{product.description}</p>
-          <dl className="mt-8 divide-y divide-gold/15 border-y border-gold/15">
+          <dl className="mt-8 divide-y divide-silver/15 border-y border-silver/15">
             {specs.map(([k, v]) => (
               <div key={k} className="flex justify-between gap-4 py-3 text-sm">
                 <dt className="tracking-widest text-muted uppercase">{k}</dt>

@@ -12,7 +12,7 @@ export default async function AdminCategoriesPage() {
   }
   return (
     <AdminFrame email={session.user!.email}>
-      <p className="text-[11px] tracking-[0.28em] text-gold uppercase">Витрина</p>
+      <p className="text-[11px] tracking-[0.28em] text-silver uppercase">Витрина</p>
       <h1 className="mt-2 font-serif text-4xl text-ivory">Категории</h1>
       <p className="mt-2 text-sm text-muted">Переименование, порядок, скрытие. Slug лучше не менять у уже открытых ссылок.</p>
       <div className="mt-8">

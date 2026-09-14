@@ -12,7 +12,7 @@ export default async function AdminButtonsPage() {
   }
   return (
     <AdminFrame email={session.user!.email}>
-      <p className="text-[11px] tracking-[0.28em] text-gold uppercase">Сайт</p>
+      <p className="text-[11px] tracking-[0.28em] text-silver uppercase">Сайт</p>
       <h1 className="mt-2 font-serif text-4xl text-ivory">Кнопки</h1>
       <p className="mt-2 max-w-xl text-sm text-muted">
         Подписи и ссылки шапки и главной. Скройте кнопку — она пропадёт с витрины, код трогать не нужно.

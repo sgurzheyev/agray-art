@@ -1,6 +1,6 @@
 # A.GRAY — agray.art
 
-Ювелирный PWA дома **A.GRAY** (мастер Андрей): чёрный фон, золото, русский интерфейс, установка в Chrome, админка на Supabase.
+Ювелирный PWA дома **A.GRAY**: чёрный фон, серебряное зеркало / liquid glass, русский интерфейс, установка в Chrome, админка на Supabase.
 
 Домен `agray.art` подключается позже (DNS → хостинг). Пока достаточно `localhost` или любого preview-URL.
 
@@ -52,7 +52,8 @@ npm start
 
 1. Откройте [SQL editor](https://supabase.com/dashboard/project/sgtkslipwvxmqcalfpvn/sql) проекта **agray.art**.
 2. Вставьте и выполните `supabase/migrations/001_schema.sql` — таблицы, RLS, bucket `product-media`.
-3. Затем `supabase/seed.sql` — категории, 26 изделий, плейсхолдеры фото, кнопки шапки/главной.
+3. Затем `supabase/seed.sql` — категории, крошечный fallback-каталог, кнопки шапки/главной.
+   Боевая витрина (~35 студийных кадров) живёт в Supabase `products` + bucket `product-media`, не в git.
 4. Authentication → Users → **Add user** → email + пароль (например `andrey@agray.art`). Скопируйте UUID.
 5. Выполните (подставьте UUID и email):
 
@@ -70,7 +71,7 @@ RLS: гости читают только `published` изделия и види
 
 ## Админка `/admin`
 
-Русский UI, чёрное и золото. После входа:
+Русский UI, чёрное и серебряное стекло. После входа:
 
 - **Обзор** — счётчики и последние изделия
 - **Изделия** — создать / цена / статус / витрина / удалить; в карточке — фото, видеодоказательство, опубликовать/скрыть
@@ -99,10 +100,11 @@ Andrey меняет цену, фото и кнопку без деплоя: ви
 
 ## Медиа и Telegram (~7k фото)
 
-Плейсхолдеры:
+Плейсхолдеры и слоты под студийные кадры:
 
 ```
 public/media/products/{SKU}/01.svg
+public/products/{category}/
 public/media/hero/atelier.mp4
 public/media/import/telegram/
 ```
