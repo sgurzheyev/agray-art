@@ -226,7 +226,8 @@ a {
 }
 
 .btn-glass.fixed,
-.btn-glass-ghost.fixed {
+.btn-glass-ghost.fixed,
+.ask-agray {
   position: fixed;
 }
 
