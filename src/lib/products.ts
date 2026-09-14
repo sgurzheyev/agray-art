@@ -99,17 +99,17 @@ export function relatedProducts(product: Product, limit = 4): Product[] {
 
 export function categoryCover(slug: CategorySlug, list: Product[] = products): string {
   const first = list.find((p) => p.category === slug);
-  return first ? productImage(first, 1) : "/brand/ag-logo.webp";
+  return first ? productImage(first, 1) : "/brand/ag-logo-clear.webp";
 }
 
 export function productImage(product: Product, index = 1): string {
   const imgs = productImages(product);
-  return imgs[Math.max(0, index - 1)] ?? "/brand/ag-logo.webp";
+  return imgs[Math.max(0, index - 1)] ?? "/brand/ag-logo-clear.webp";
 }
 
 export function productImages(product: Product): string[] {
   if (product.images && product.images.length > 0) return product.images;
-  if (product.id) return ["/brand/ag-logo.webp"];
+  if (product.id) return ["/brand/ag-logo-clear.webp"];
   const count = Math.max(1, product.imageCount || 1);
   return Array.from({ length: count }, (_, i) => {
     const n = String(i + 1).padStart(2, "0");

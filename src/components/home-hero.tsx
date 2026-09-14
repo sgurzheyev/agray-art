@@ -13,8 +13,9 @@ export function HomeHero({
   secondaryLabel?: string;
 }) {
   return (
-    <section className="relative isolate min-h-[88dvh] overflow-hidden bg-ink">
+    <section className="relative min-h-[88dvh] bg-transparent">
       <HeroMedia />
+      <div className="hero-copy-veil" />
       <div className="relative z-10 mx-auto flex min-h-[88dvh] max-w-6xl flex-col justify-end px-4 pb-16 sm:px-6 sm:pb-24">
         <p className="text-[11px] tracking-[0.42em] text-silver uppercase">Ювелирный дом · Москва</p>
         <h1 className="mt-4 font-serif text-5xl leading-none text-ivory sm:text-7xl">A.GRAY</h1>

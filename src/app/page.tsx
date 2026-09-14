@@ -28,7 +28,7 @@ async function HomeBelowFold() {
   const workshop = homeButtons.find((b) => b.key === "home.workshop_cta") ?? homeButtons[2];
 
   return (
-    <div className="relative z-10 bg-ink">
+    <div className="relative z-10">
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <HeaderBlock kicker="Категории" title="Коллекция" />
         <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
