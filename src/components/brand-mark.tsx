@@ -28,7 +28,7 @@ export function BrandMark({
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         ref={ref}
-        src="/brand/ag-logo.webp"
+        src="/brand/ag-logo-clear.webp"
         alt=""
         aria-hidden="true"
         width={size}

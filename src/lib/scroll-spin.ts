@@ -1,4 +1,4 @@
-const PX_TO_DEG = 0.55;
+const PX_TO_DEG = 0.14;
 const IMPULSE = 1.15;
 const FRICTION_SCROLL = 0.988;
 const FRICTION_COAST = 0.91;
@@ -93,6 +93,7 @@ function bind() {
 /**
  * rotateY driven by scroll velocity: faster flicks spin harder, then coast
  * with friction after scroll stops. Displacement still maps while moving.
+ * PX_TO_DEG is ~4× slower than the original 0.55 so the turntable stays calm.
  */
 export function subscribeScrollSpin(fn: Listener): () => void {
   bind();

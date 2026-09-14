@@ -6,6 +6,7 @@ import { subscribeScrollSpin } from "@/lib/scroll-spin";
 const LAYERS = 7;
 const DEPTH_PX = 8;
 
+/** Viewport-fixed AG turntable: stays behind the catalog while the page scrolls. */
 export function HeroMedia() {
   const stageRef = useRef<HTMLDivElement>(null);
   const glintRef = useRef<HTMLDivElement>(null);
