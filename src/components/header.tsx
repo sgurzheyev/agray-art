@@ -6,6 +6,7 @@ import { Menu, ShoppingBag, X } from "lucide-react";
 import { useEffect, useState, type CSSProperties } from "react";
 import { classNames } from "@/lib/format";
 import { BrandMark } from "@/components/brand-mark";
+import { BrandName } from "@/components/brand-name";
 import { useCart } from "@/components/cart-provider";
 import { InstallButton } from "@/components/install-prompt";
 import type { Category, SiteButton } from "@/lib/types";
@@ -85,9 +86,7 @@ export function Header({
           className="absolute left-1/2 flex -translate-x-1/2 items-center gap-2 sm:gap-2.5"
         >
           <BrandMark className="h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9" size={72} priority />
-          <span className="font-serif text-xl tracking-[0.28em] text-silver-bright sm:text-2xl sm:tracking-[0.35em]">
-            A.GRAY
-          </span>
+          <BrandName className="text-xl text-silver-bright sm:text-2xl" />
         </Link>
 
         <div className="flex items-center gap-2">

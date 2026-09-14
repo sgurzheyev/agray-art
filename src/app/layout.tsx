@@ -1,4 +1,4 @@
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Cormorant_Garamond, Manrope, Poiret_One } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import { AppChrome } from "@/components/app-chrome";
 import { CartProvider } from "@/components/cart-provider";
@@ -16,6 +16,12 @@ const cormorant = Cormorant_Garamond({
 const manrope = Manrope({
   subsets: ["cyrillic", "latin"],
   variable: "--font-manrope",
+});
+
+const poiret = Poiret_One({
+  subsets: ["cyrillic", "latin"],
+  weight: "400",
+  variable: "--font-poiret",
 });
 
 export const metadata: Metadata = {
@@ -63,7 +69,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   ]);
 
   return (
-    <html lang="ru" className={`${cormorant.variable} ${manrope.variable} h-full`}>
+    <html lang="ru" className={`${cormorant.variable} ${manrope.variable} ${poiret.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-ink font-sans text-ivory antialiased">
         <CartProvider>
           <AppChrome navButtons={navButtons} categories={categories}>

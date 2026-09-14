@@ -2,6 +2,7 @@
 
 import { FormEvent, useRef, useState } from "react";
 import { MessageCircle, Send, X } from "lucide-react";
+import { BrandName } from "@/components/brand-name";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -65,14 +66,14 @@ export function AiChat() {
         className="btn-glass-ghost fixed right-4 bottom-4 z-40 flex items-center gap-2 px-4 py-3 text-[11px] tracking-[0.18em] shadow-[0_0_40px_rgba(200,210,220,0.14)] sm:right-6 sm:bottom-6"
       >
         <MessageCircle className="size-4" strokeWidth={1.5} />
-        Спросить A.GRAY
+        Спросить <BrandName tracking="0.14em" />
       </button>
 
       {open && (
         <div className="fixed inset-x-0 bottom-0 z-50 flex h-[min(34rem,88dvh)] flex-col border-t border-silver/30 bg-ink sm:inset-x-auto sm:right-6 sm:bottom-6 sm:h-[36rem] sm:w-[24rem] sm:border">
           <div className="flex items-center justify-between border-b border-silver/20 px-4 py-3">
             <div>
-              <p className="font-serif text-lg text-silver">A.GRAY</p>
+              <BrandName as="p" className="text-lg text-silver" tracking="0.16em" />
               <p className="text-[10px] tracking-[0.2em] text-muted uppercase">
                 Консультант{demo ? " · демо" : ""}
               </p>

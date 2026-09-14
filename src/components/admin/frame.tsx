@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandName } from "@/components/brand-name";
 import { signOutAdmin } from "@/app/admin/actions";
 
 const links = [
@@ -19,8 +20,8 @@ export function AdminFrame({
   return (
     <div className="flex min-h-dvh">
       <aside className="flex w-52 shrink-0 flex-col border-r border-silver/20 bg-ink-soft px-4 py-6">
-        <Link href="/admin" className="font-serif text-xl tracking-[0.28em] text-silver">
-          A.GRAY
+        <Link href="/admin" className="text-silver">
+          <BrandName className="text-xl" />
         </Link>
         <p className="mt-1 text-[10px] tracking-[0.2em] text-muted uppercase">Админка</p>
         <nav className="mt-8 flex flex-col gap-3 text-[11px] tracking-[0.18em] uppercase">

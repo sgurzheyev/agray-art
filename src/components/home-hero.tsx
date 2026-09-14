@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandName } from "@/components/brand-name";
 import { HeroMedia } from "@/components/hero-media";
 
 export function HomeHero({
@@ -17,7 +18,7 @@ export function HomeHero({
       <HeroMedia />
       <div className="relative z-10 mx-auto flex min-h-[88dvh] max-w-6xl flex-col justify-end px-4 pb-16 sm:px-6 sm:pb-24">
         <p className="text-[11px] tracking-[0.42em] text-silver uppercase">Ювелирный дом · Москва</p>
-        <h1 className="mt-4 font-serif text-5xl leading-none text-ivory sm:text-7xl">A.GRAY</h1>
+        <BrandName as="h1" className="mt-4 text-5xl leading-none text-ivory sm:text-7xl" tracking="0.12em" />
         <p className="mt-5 max-w-md font-serif text-xl leading-snug text-ivory/80 sm:text-2xl">
           Свет. Тишина. Форма.
         </p>

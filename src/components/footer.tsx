@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandName } from "@/components/brand-name";
 import type { Category } from "@/lib/types";
 
 export function Footer({ categories }: { categories: Category[] }) {
@@ -6,7 +7,7 @@ export function Footer({ categories }: { categories: Category[] }) {
     <footer className="relative z-10 mt-auto border-t border-silver/15 bg-ink">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
         <div>
-          <p className="font-serif text-2xl tracking-[0.3em] text-silver-bright">A.GRAY</p>
+          <BrandName as="p" className="text-2xl text-silver-bright" />
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">
             Ювелирный дом. Ручная работа, свет на чёрном, зеркало металла. Москва · agray.art
           </p>
@@ -31,7 +32,7 @@ export function Footer({ categories }: { categories: Category[] }) {
             Telegram и почта — в README до подключения домена.
           </p>
           <p className="mt-6 text-xs tracking-widest text-muted/70 uppercase">
-            © {new Date().getFullYear()} A.GRAY
+            © {new Date().getFullYear()} <BrandName tracking="0.16em" />
           </p>
         </div>
       </div>

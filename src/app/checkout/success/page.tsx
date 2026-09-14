@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BrandName } from "@/components/brand-name";
 
 export const metadata: Metadata = { title: "Заказ принят" };
 
@@ -11,7 +12,7 @@ export default async function CheckoutSuccessPage({ searchParams }: Props) {
 
   return (
     <div className="mx-auto max-w-xl px-4 py-24 text-center">
-      <p className="text-[11px] tracking-[0.28em] text-silver uppercase">A.GRAY</p>
+      <BrandName as="p" className="text-[11px] text-silver" tracking="0.28em" />
       <h1 className="mt-4 font-serif text-4xl text-ivory">Спасибо</h1>
       <p className="mt-4 text-sm leading-relaxed text-muted">
         {isDemo

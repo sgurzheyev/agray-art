@@ -10,6 +10,13 @@
   --color-muted: #9aa3b0;
   --font-sans: var(--font-manrope);
   --font-serif: var(--font-cormorant);
+  --font-brand: var(--font-poiret);
+}
+
+.font-brand {
+  font-family: var(--font-brand), var(--font-serif), serif;
+  font-weight: 400;
+  font-feature-settings: "kern" 1;
 }
 
 html {
