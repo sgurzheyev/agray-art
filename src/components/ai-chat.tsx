@@ -62,7 +62,7 @@ export function AiChat() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="btn-glass-ghost fixed right-4 bottom-4 z-40 flex items-center gap-2 px-4 py-3 text-[11px] tracking-[0.18em] shadow-[0_0_40px_rgba(200,210,220,0.14)] sm:right-6 sm:bottom-6"
+        className="btn-glass-ghost !fixed right-4 bottom-4 z-50 inline-flex items-center gap-2 px-4 py-3 text-[11px] tracking-[0.18em] shadow-[0_0_40px_rgba(200,210,220,0.14)] sm:right-6 sm:bottom-6"
       >
         <MessageCircle className="size-4" strokeWidth={1.5} />
         Спросить A.GRAY

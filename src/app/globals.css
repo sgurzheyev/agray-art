@@ -225,6 +225,11 @@ a {
     border-color 0.35s ease;
 }
 
+.btn-glass.fixed,
+.btn-glass-ghost.fixed {
+  position: fixed;
+}
+
 .btn-glass::before,
 .btn-glass-ghost::before {
   content: "";
