@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { categoryName, productImage } from "@/lib/products";
+import { productImage } from "@/lib/products";
 import { formatPrice } from "@/lib/format";
 import type { Product } from "@/lib/types";
 
@@ -18,7 +18,7 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="mt-4 flex items-start justify-between gap-3">
         <div>
           <p className="text-[10px] tracking-[0.22em] text-gold/80 uppercase">
-            {categoryName(product.category)}
+            {product.categoryName ?? product.category}
           </p>
           <h3 className="mt-1 font-serif text-xl text-ivory group-hover:text-gold">
             {product.name}

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { products } from "@/lib/products";
+import { getPublishedProducts } from "@/lib/catalog";
+import type { Product } from "@/lib/types";
 
 const PERSONA = `Вы — консультант ювелирного дома A.GRAY (ателье Андрея, бренд A.GRAY, сайт agray.art).
 Говорите по-русски, сдержанно, коротко, профессионально. Без восклицаний и скидочного тона.
@@ -9,8 +10,8 @@ const PERSONA = `Вы — консультант ювелирного дома A
 Цены называйте в рублях, только по каталогу.
 Если вопрос не про украшения — мягко верните к теме.`;
 
-function catalogDigest() {
-  return products
+function catalogDigest(list: Product[]) {
+  return list
     .map(
       (p) =>
         `${p.sku} | ${p.name} | ${p.category} | ${p.metal} ${p.assay} | ${p.weightGrams}г | ${p.price} RUB`,
@@ -64,6 +65,8 @@ export async function POST(req: Request) {
   const base = (process.env.LLM_BASE_URL || "https://api.openai.com/v1").replace(/\/$/, "");
   const model = process.env.LLM_MODEL || "gpt-4o-mini";
 
+  const catalog = await getPublishedProducts();
+
   if (!apiKey) {
     return NextResponse.json({ reply: demoReply(lastUser), demo: true });
   }
@@ -80,7 +83,7 @@ export async function POST(req: Request) {
         temperature: 0.5,
         max_tokens: 500,
         messages: [
-          { role: "system", content: `${PERSONA}\n\nКаталог v1:\n${catalogDigest()}` },
+          { role: "system", content: `${PERSONA}\n\nКаталог:\n${catalogDigest(catalog)}` },
           ...messages.slice(-12).map((m) => ({ role: m.role, content: m.content })),
         ],
       }),

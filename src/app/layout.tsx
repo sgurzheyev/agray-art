@@ -1,10 +1,9 @@
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import type { Metadata, Viewport } from "next";
-import { AiChat } from "@/components/ai-chat";
+import { AppChrome } from "@/components/app-chrome";
 import { CartProvider } from "@/components/cart-provider";
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
 import { PwaRegister } from "@/components/pwa-register";
+import { getSiteButtons, getVisibleCategories } from "@/lib/catalog";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -58,15 +57,19 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const [navButtons, categories] = await Promise.all([
+    getSiteButtons("nav"),
+    getVisibleCategories(),
+  ]);
+
   return (
     <html lang="ru" className={`${cormorant.variable} ${manrope.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-ink font-sans text-ivory antialiased">
         <CartProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <AiChat />
+          <AppChrome navButtons={navButtons} categories={categories}>
+            {children}
+          </AppChrome>
           <PwaRegister />
         </CartProvider>
       </body>

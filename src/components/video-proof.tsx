@@ -7,9 +7,11 @@ import type { Product } from "@/lib/types";
 
 export function VideoProof({ product }: { product: Product }) {
   const src = productVideoPath(product);
-  const [ready, setReady] = useState(false);
+  const remote = src.startsWith("http://") || src.startsWith("https://");
+  const [ready, setReady] = useState(remote);
 
   useEffect(() => {
+    if (remote) return;
     let cancelled = false;
     fetch(src, { method: "HEAD" })
       .then((res) => {
@@ -21,7 +23,7 @@ export function VideoProof({ product }: { product: Product }) {
     return () => {
       cancelled = true;
     };
-  }, [src]);
+  }, [src, remote]);
 
   return (
     <section className="mt-10 border border-gold/20 bg-ink-soft p-4 sm:p-6">

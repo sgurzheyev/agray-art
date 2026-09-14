@@ -6,17 +6,16 @@ import { ProductCard } from "@/components/product-card";
 import { ProductGallery } from "@/components/product-gallery";
 import { VideoProof } from "@/components/video-proof";
 import { formatWeight } from "@/lib/format";
-import { categoryName, getProduct, productImages, products, relatedProducts } from "@/lib/products";
+import { getProductBySlug, getRelated } from "@/lib/catalog";
+import { productImages } from "@/lib/products";
+
+export const dynamic = "force-dynamic";
 
 type Props = { params: Promise<{ slug: string }> };
 
-export function generateStaticParams() {
-  return products.map((p) => ({ slug: p.slug }));
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const product = getProduct(slug);
+  const product = await getProductBySlug(slug);
   if (!product) return { title: "Изделие" };
   return {
     title: product.name,
@@ -26,15 +25,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
-  const product = getProduct(slug);
+  const product = await getProductBySlug(slug);
   if (!product) notFound();
-  const related = relatedProducts(product);
+  const related = await getRelated(product);
   const specs = [
     ["Артикул", product.sku],
     ["Металл", product.metal],
-    ["Проба", product.assay],
+    product.assay ? ["Проба", product.assay] : null,
     ["Вес", formatWeight(product.weightGrams)],
     product.stone ? ["Вставка", product.stone] : null,
+    product.leadDays ? ["Срок", `${product.leadDays} дн.`] : null,
   ].filter(Boolean) as [string, string][];
 
   return (
@@ -45,14 +45,14 @@ export default async function ProductPage({ params }: Props) {
         </Link>
         {" / "}
         <Link href={`/catalog/${product.category}`} className="hover:text-gold">
-          {categoryName(product.category)}
+          {product.categoryName ?? product.category}
         </Link>
       </p>
       <div className="mt-6 grid gap-10 lg:grid-cols-2 lg:gap-16">
         <ProductGallery images={productImages(product)} alt={product.name} />
         <div>
           <p className="text-[11px] tracking-[0.28em] text-gold uppercase">
-            {categoryName(product.category)}
+            {product.categoryName ?? product.category}
           </p>
           <h1 className="mt-2 font-serif text-4xl text-ivory sm:text-5xl">{product.name}</h1>
           <p className="mt-5 text-sm leading-relaxed text-muted">{product.description}</p>

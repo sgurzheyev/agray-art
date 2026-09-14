@@ -4,20 +4,27 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, ShoppingBag, X } from "lucide-react";
 import { useState } from "react";
-import { categories } from "@/lib/categories";
 import { classNames } from "@/lib/format";
 import { useCart } from "@/components/cart-provider";
 import { InstallButton } from "@/components/install-prompt";
+import type { Category, SiteButton } from "@/lib/types";
 
-const links = [
-  { href: "/catalog", label: "Каталог" },
-  { href: "/atelier", label: "Ателье" },
-];
-
-export function Header() {
+export function Header({
+  navButtons,
+  categories,
+}: {
+  navButtons: SiteButton[];
+  categories: Category[];
+}) {
   const pathname = usePathname();
   const { count, notice } = useCart();
   const [open, setOpen] = useState(false);
+  const links = navButtons.length
+    ? navButtons
+    : [
+        { key: "nav.catalog", label: "Каталог", href: "/catalog", visible: true, sortOrder: 10 },
+        { key: "nav.atelier", label: "Ателье", href: "/atelier", visible: true, sortOrder: 20 },
+      ];
 
   return (
     <header className="sticky top-0 z-40 border-b border-gold/20 bg-ink/85 backdrop-blur-md">
@@ -34,11 +41,11 @@ export function Header() {
         <nav className="hidden items-center gap-8 text-[11px] tracking-[0.28em] uppercase text-muted md:flex">
           {links.map((l) => (
             <Link
-              key={l.href}
+              key={l.key}
               href={l.href}
               className={classNames(
                 "transition-colors hover:text-gold",
-                pathname.startsWith(l.href) && "text-gold",
+                pathname.startsWith(l.href) && l.href !== "/" && "text-gold",
               )}
             >
               {l.label}
@@ -47,9 +54,7 @@ export function Header() {
         </nav>
 
         <Link href="/" className="absolute left-1/2 -translate-x-1/2 text-center">
-          <span className="font-serif text-xl tracking-[0.35em] text-gold sm:text-2xl">
-            A.GRAY
-          </span>
+          <span className="font-serif text-xl tracking-[0.35em] text-gold sm:text-2xl">A.GRAY</span>
         </Link>
 
         <div className="flex items-center gap-2">
@@ -73,7 +78,7 @@ export function Header() {
         <div className="border-t border-gold/15 bg-ink px-4 py-6 md:hidden">
           <div className="flex flex-col gap-4 text-sm tracking-[0.18em] uppercase text-ivory">
             {links.map((l) => (
-              <Link key={l.href} href={l.href} onClick={() => setOpen(false)}>
+              <Link key={l.key} href={l.href} onClick={() => setOpen(false)}>
                 {l.label}
               </Link>
             ))}

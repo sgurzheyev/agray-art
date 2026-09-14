@@ -1,11 +1,21 @@
 import Link from "next/link";
 import { HeroMedia } from "@/components/hero-media";
 import { ProductCard } from "@/components/product-card";
-import { categories } from "@/lib/categories";
-import { categoryCover, featuredProducts } from "@/lib/products";
+import { getFeatured, getSiteButtons, getVisibleCategories, loadCatalog } from "@/lib/catalog";
+import { categoryCover } from "@/lib/products";
 
-export default function HomePage() {
-  const featured = featuredProducts();
+export const dynamic = "force-dynamic";
+
+export default async function HomePage() {
+  const [{ products }, featured, categories, homeButtons] = await Promise.all([
+    loadCatalog(),
+    getFeatured(),
+    getVisibleCategories(),
+    getSiteButtons("home"),
+  ]);
+  const primary = homeButtons.find((b) => b.key === "home.cta_primary") ?? homeButtons[0];
+  const secondary = homeButtons.find((b) => b.key === "home.cta_secondary") ?? homeButtons[1];
+  const workshop = homeButtons.find((b) => b.key === "home.workshop_cta") ?? homeButtons[2];
 
   return (
     <div>
@@ -18,18 +28,22 @@ export default function HomePage() {
             Авторские украшения на чёрном. Золото, тишина, точная работа ателье Андрея.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/catalog"
-              className="bg-gold px-8 py-3.5 text-center text-xs tracking-[0.28em] text-ink uppercase"
-            >
-              Смотреть коллекцию
-            </Link>
-            <Link
-              href="/atelier"
-              className="border border-gold/60 px-8 py-3.5 text-center text-xs tracking-[0.28em] text-gold uppercase"
-            >
-              Ателье
-            </Link>
+            {primary && (
+              <Link
+                href={primary.href}
+                className="bg-gold px-8 py-3.5 text-center text-xs tracking-[0.28em] text-ink uppercase"
+              >
+                {primary.label}
+              </Link>
+            )}
+            {secondary && (
+              <Link
+                href={secondary.href}
+                className="border border-gold/60 px-8 py-3.5 text-center text-xs tracking-[0.28em] text-gold uppercase"
+              >
+                {secondary.label}
+              </Link>
+            )}
           </div>
         </div>
       </section>
@@ -41,7 +55,7 @@ export default function HomePage() {
             <Link key={c.slug} href={`/catalog/${c.slug}`} className="group relative aspect-[4/5] overflow-hidden bg-black">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={categoryCover(c.slug)}
+                src={categoryCover(c.slug, products)}
                 alt={c.name}
                 className="h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
               />
@@ -78,12 +92,14 @@ export default function HomePage() {
               Воск, отливка, закрепка, полировка. Сюда приходят за размером, гравировкой и вещью,
               которой нет в витрине. Короткий визит — лучше длинной переписки.
             </p>
-            <Link
-              href="/atelier"
-              className="mt-8 inline-block border border-gold px-6 py-3 text-xs tracking-[0.28em] text-gold uppercase"
-            >
-              Как попасть
-            </Link>
+            {workshop && (
+              <Link
+                href={workshop.href}
+                className="mt-8 inline-block border border-gold px-6 py-3 text-xs tracking-[0.28em] text-gold uppercase"
+              >
+                {workshop.label}
+              </Link>
+            )}
           </div>
         </div>
       </section>

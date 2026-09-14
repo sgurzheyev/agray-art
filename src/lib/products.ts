@@ -425,24 +425,30 @@ export function relatedProducts(product: Product, limit = 4): Product[] {
     .slice(0, limit);
 }
 
-export function categoryCover(slug: CategorySlug): string {
-  const first = products.find((p) => p.category === slug);
+export function categoryCover(slug: CategorySlug, list: Product[] = products): string {
+  const first = list.find((p) => p.category === slug);
   return first ? productImage(first, 1) : "/media/hero/poster.svg";
 }
 
 export function productImage(product: Product, index = 1): string {
-  const n = String(Math.min(index, product.imageCount)).padStart(2, "0");
-  return `/media/products/${product.sku}/${n}.svg`;
+  const imgs = productImages(product);
+  return imgs[Math.max(0, index - 1)] ?? "/media/hero/poster.svg";
 }
 
 export function productImages(product: Product): string[] {
-  return Array.from({ length: product.imageCount }, (_, i) => productImage(product, i + 1));
+  if (product.images && product.images.length > 0) return product.images;
+  const count = Math.max(1, product.imageCount || 1);
+  return Array.from({ length: count }, (_, i) => {
+    const n = String(i + 1).padStart(2, "0");
+    return `/media/products/${product.sku}/${n}.svg`;
+  });
 }
 
 export function productVideoPath(product: Product): string {
-  return `/media/products/${product.sku}/proof.mp4`;
+  return product.videoUrl || `/media/products/${product.sku}/proof.mp4`;
 }
 
-export function categoryName(slug: CategorySlug): string {
+export function categoryName(slug: string, list?: { slug: string; name: string }[]): string {
+  if (list) return list.find((c) => c.slug === slug)?.name ?? slug;
   return categories.find((c) => c.slug === slug)?.name ?? slug;
 }
