@@ -26,11 +26,11 @@ export default async function HomePage() {
           <p className="text-[11px] tracking-[0.42em] text-silver uppercase">Ювелирный дом · Москва</p>
           <div className="mt-4 flex items-center gap-3 sm:gap-5">
             <BrandMark
-              className="h-16 w-16 sm:h-24 sm:w-24 md:h-28 md:w-28"
+              className="h-[4.25rem] w-[4.25rem] sm:h-24 sm:w-24 md:h-28 md:w-28"
               size={224}
               priority
             />
-            <h1 className="font-serif text-5xl leading-none text-ivory sm:text-7xl">A.GRAY</h1>
+            <h1 className="min-w-0 font-serif text-5xl leading-none text-ivory sm:text-7xl">A.GRAY</h1>
           </div>
           <p className="mt-5 max-w-md font-serif text-xl leading-snug text-ivory/80 sm:text-2xl">
             Свет. Тишина. Форма.

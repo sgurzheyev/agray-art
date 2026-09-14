@@ -44,7 +44,9 @@ export function BrandMark({
   useEffect(() => {
     bindScrollSpin();
     const apply = (deg: number) => {
-      if (ref.current) ref.current.style.transform = `rotateY(${deg}deg)`;
+      if (ref.current) {
+        ref.current.style.transform = `perspective(640px) rotateY(${deg}deg)`;
+      }
     };
     subs.add(apply);
     apply((window.scrollY / Math.max(window.innerHeight, 1)) * 120);
