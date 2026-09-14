@@ -60,14 +60,16 @@ export function AiChat() {
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        className="btn-glass-ghost fixed right-4 bottom-4 z-40 flex items-center gap-2 px-4 py-3 text-[11px] tracking-[0.18em] shadow-[0_0_40px_rgba(200,210,220,0.14)] sm:right-6 sm:bottom-6"
-      >
-        <MessageCircle className="size-4" strokeWidth={1.5} />
-        Спросить <BrandName tracking="0.14em" />
-      </button>
+      {!open && (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="ask-agray btn-glass-ghost gap-2 text-[11px] tracking-[0.18em]"
+        >
+          <MessageCircle className="size-4" strokeWidth={1.5} />
+          Спросить <BrandName tracking="0.14em" />
+        </button>
+      )}
 
       {open && (
         <div className="fixed inset-x-0 bottom-0 z-50 flex h-[min(34rem,88dvh)] flex-col border-t border-silver/30 bg-ink sm:inset-x-auto sm:right-6 sm:bottom-6 sm:h-[36rem] sm:w-[24rem] sm:border">
