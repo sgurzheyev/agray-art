@@ -3,8 +3,8 @@
 import { useEffect, useRef } from "react";
 import { subscribeScrollSpin } from "@/lib/scroll-spin";
 
-const LAYERS = 14;
-const DEPTH_PX = 5.5;
+const LAYERS = 8;
+const DEPTH_PX = 7;
 
 export function HeroMedia() {
   const stageRef = useRef<HTMLDivElement>(null);
@@ -12,7 +12,7 @@ export function HeroMedia() {
   useEffect(() => {
     return subscribeScrollSpin((deg) => {
       if (stageRef.current) {
-        stageRef.current.style.transform = `rotateX(10deg) rotateY(${deg}deg)`;
+        stageRef.current.style.transform = `rotateX(12deg) rotateY(${deg}deg)`;
       }
     });
   }, []);
@@ -34,8 +34,8 @@ export function HeroMedia() {
               className="hero-logo-3d-layer"
               style={{
                 transform: `translateZ(${-i * DEPTH_PX}px)`,
-                opacity: i === 0 ? 0.95 : 0.12,
-                filter: i === 0 ? "none" : `brightness(${0.26 + i * 0.04})`,
+                opacity: i === 0 ? 1 : 0.16,
+                filter: i === 0 ? "none" : `brightness(${0.35 + i * 0.06})`,
               }}
             />
           ))}

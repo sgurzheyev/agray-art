@@ -1,20 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
-  <defs>
-    <radialGradient id="v" cx="50%" cy="40%" r="70%">
-      <stop offset="0%" stop-color="#12141a"/>
-      <stop offset="55%" stop-color="#08090b"/>
-      <stop offset="100%" stop-color="#050505"/>
-    </radialGradient>
-    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#eef2f7"/><stop offset="100%" stop-color="#c9d0db"/>
-    </linearGradient>
-  </defs>
-  <rect width="1920" height="1080" fill="url(#v)"/>
-  <g fill="none" stroke="url(#silver)" stroke-opacity="0.18" stroke-width="1.2">
-    <ellipse cx="960" cy="520" rx="420" ry="220"/>
-    <ellipse cx="960" cy="520" rx="300" ry="300"/>
-    <circle cx="960" cy="420" r="8"/>
-  </g>
-  <text x="960" y="540" text-anchor="middle" fill="#c9d0db" fill-opacity="0.35" font-family="Georgia, serif" font-size="72" letter-spacing="18">A.GRAY</text>
+  <rect width="1920" height="1080" fill="#050505"/>
 </svg>

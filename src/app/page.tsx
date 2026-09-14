@@ -1,54 +1,34 @@
+import { Suspense } from "react";
 import Link from "next/link";
-import { HeroMedia } from "@/components/hero-media";
+import { HomeHero } from "@/components/home-hero";
 import { ProductCard } from "@/components/product-card";
 import { getFeatured, getSiteButtons, getVisibleCategories, loadCatalog } from "@/lib/catalog";
 import { categoryCover } from "@/lib/products";
 
 export const dynamic = "force-dynamic";
 
-export default async function HomePage() {
+export default function HomePage() {
+  return (
+    <>
+      <HomeHero />
+      <Suspense fallback={null}>
+        <HomeBelowFold />
+      </Suspense>
+    </>
+  );
+}
+
+async function HomeBelowFold() {
   const [{ products }, featured, categories, homeButtons] = await Promise.all([
     loadCatalog(),
     getFeatured(),
     getVisibleCategories(),
     getSiteButtons("home"),
   ]);
-  const primary = homeButtons.find((b) => b.key === "home.cta_primary") ?? homeButtons[0];
-  const secondary = homeButtons.find((b) => b.key === "home.cta_secondary") ?? homeButtons[1];
   const workshop = homeButtons.find((b) => b.key === "home.workshop_cta") ?? homeButtons[2];
 
   return (
-    <div>
-      <HeroMedia />
-      <div className="relative z-10">
-      <section className="min-h-[88dvh]">
-        <div className="relative mx-auto flex min-h-[88dvh] max-w-6xl flex-col justify-end px-4 pb-16 sm:px-6 sm:pb-24">
-          <p className="text-[11px] tracking-[0.42em] text-silver uppercase">Ювелирный дом · Москва</p>
-          <h1 className="mt-4 font-serif text-5xl leading-none text-ivory sm:text-7xl">A.GRAY</h1>
-          <p className="mt-5 max-w-md font-serif text-xl leading-snug text-ivory/80 sm:text-2xl">
-            Свет. Тишина. Форма.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            {primary && (
-              <Link
-                href={primary.href}
-                className="btn-glass px-8 py-3.5 text-center text-xs tracking-[0.28em] uppercase"
-              >
-                {primary.label}
-              </Link>
-            )}
-            {secondary && (
-              <Link
-                href={secondary.href}
-                className="btn-glass-ghost px-8 py-3.5 text-center text-xs tracking-[0.28em] uppercase"
-              >
-                {secondary.label}
-              </Link>
-            )}
-          </div>
-        </div>
-      </section>
-
+    <div className="relative z-10 bg-ink">
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <HeaderBlock kicker="Категории" title="Коллекция" />
         <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
@@ -107,7 +87,6 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-      </div>
     </div>
   );
 }
