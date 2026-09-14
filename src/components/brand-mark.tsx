@@ -35,7 +35,7 @@ export function BrandMark({
         height={size}
         decoding="async"
         {...(priority ? { fetchPriority: "high" as const } : {})}
-        className={classNames("brand-mark object-contain", className)}
+        className={classNames("brand-mark bg-transparent object-contain", className)}
       />
     </span>
   );
