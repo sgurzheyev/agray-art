@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandMark } from "@/components/brand-mark";
 import { HeroMedia } from "@/components/hero-media";
 import { ProductCard } from "@/components/product-card";
 import { getFeatured, getSiteButtons, getVisibleCategories, loadCatalog } from "@/lib/catalog";
@@ -23,7 +24,14 @@ export default async function HomePage() {
         <HeroMedia />
         <div className="relative z-10 mx-auto flex min-h-[88dvh] max-w-6xl flex-col justify-end px-4 pb-16 sm:px-6 sm:pb-24">
           <p className="text-[11px] tracking-[0.42em] text-silver uppercase">Ювелирный дом · Москва</p>
-          <h1 className="mt-4 font-serif text-5xl leading-none text-ivory sm:text-7xl">A.GRAY</h1>
+          <div className="mt-4 flex items-center gap-3 sm:gap-5">
+            <BrandMark
+              className="h-16 w-16 sm:h-24 sm:w-24 md:h-28 md:w-28"
+              size={224}
+              priority
+            />
+            <h1 className="font-serif text-5xl leading-none text-ivory sm:text-7xl">A.GRAY</h1>
+          </div>
           <p className="mt-5 max-w-md font-serif text-xl leading-snug text-ivory/80 sm:text-2xl">
             Свет. Тишина. Форма.
           </p>
