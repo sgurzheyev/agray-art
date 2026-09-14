@@ -57,7 +57,7 @@ export default async function HomePage() {
               <img
                 src={categoryCover(c.slug, products)}
                 alt={c.name}
-                className="h-full w-full object-cover object-center opacity-80 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
+                className="h-full w-full bg-black object-contain object-center transition duration-700 group-hover:scale-[1.03]"
               />
               <div className="pointer-events-none absolute inset-0 product-chrome" />
               <div className="absolute inset-x-0 bottom-0">
@@ -73,14 +73,16 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-10">
-        <HeaderBlock kicker="Избранное" title="В витрине" />
-        <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((p) => (
-            <ProductCard key={p.slug} product={p} />
-          ))}
-        </div>
-      </section>
+      {featured.length > 0 && (
+        <section className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-10">
+          <HeaderBlock kicker="Избранное" title="В витрине" />
+          <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            {featured.map((p) => (
+              <ProductCard key={p.slug} product={p} />
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <div className="grid items-center gap-10 border border-silver/20 bg-ink-soft md:grid-cols-2">

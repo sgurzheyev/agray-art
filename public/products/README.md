@@ -1,11 +1,10 @@
-# Curated catalog stills (black studio)
+# Catalog stills
 
-Drop Telegram-export photos here by category before mapping them to SKUs.
-The live storefront currently reads `/media/products/{SKU}/` placeholders or
-Supabase Storage `product-media`. This tree is the staging drop for curated
-black-background studio shots.
+Live photos are uploaded to Supabase Storage (`product-media`) and linked from
+`product_media` rows. They are not committed here.
 
-Expected frame: dark studio, product centered, no lifestyle props.
+This tree is an optional local drop if you need to stage Telegram exports by
+category before the Storage import:
 
 ```
 public/products/rings/
@@ -18,3 +17,5 @@ public/products/chains/
 public/products/wedding/
 public/products/sport/
 ```
+
+Expected frame: black studio background, product centered, no lifestyle props.

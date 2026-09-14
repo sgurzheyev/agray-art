@@ -30,7 +30,7 @@ export function CartView() {
         {items.map((item) => (
           <li key={`${item.slug}-${item.size ?? ""}`} className="flex gap-4 py-6">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={item.image} alt="" className="size-28 object-cover bg-black" />
+            <img src={item.image} alt="" className="size-28 bg-black object-contain" />
             <div className="flex flex-1 flex-col">
               <div className="flex justify-between gap-3">
                 <div>

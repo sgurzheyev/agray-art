@@ -11,7 +11,9 @@ export function ProductCard({ product }: { product: Product }) {
         <img
           src={productImage(product, 1)}
           alt={product.name}
-          className="h-full w-full bg-black object-cover object-center transition duration-700 group-hover:scale-[1.04]"
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full bg-black object-contain object-center transition duration-700 group-hover:scale-[1.03]"
         />
         <div className="pointer-events-none absolute inset-0 product-chrome" />
       </div>

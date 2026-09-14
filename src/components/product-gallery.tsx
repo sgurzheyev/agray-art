@@ -40,7 +40,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
         <img
           src={images[active]}
           alt={alt}
-          className="h-full w-full object-cover transition-transform duration-200 ease-out"
+          className="h-full w-full bg-black object-contain transition-transform duration-200 ease-out"
           style={{
             transform: hover ? "scale(1.7)" : "scale(1)",
             transformOrigin: origin,
@@ -65,7 +65,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
               )}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt="" className="h-full w-full object-cover" />
+              <img src={src} alt="" className="h-full w-full bg-black object-contain" />
             </button>
           ))}
         </div>

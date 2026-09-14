@@ -59,11 +59,18 @@ export function CatalogBrowser({
         </select>
       </div>
       <p className="mt-4 text-xs tracking-widest text-muted uppercase">{list.length} изделий</p>
-      <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-        {list.map((p) => (
-          <ProductCard key={p.slug} product={p} />
-        ))}
-      </div>
+      {list.length === 0 ? (
+        <p className="mt-10 max-w-md text-sm leading-relaxed text-muted">
+          В этой категории пока нет опубликованных изделий. Студийные кадры на чёрном появятся из
+          Supabase, как только карточки будут в статусе published.
+        </p>
+      ) : (
+        <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          {list.map((p) => (
+            <ProductCard key={p.slug} product={p} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -54,7 +54,9 @@ const mediaRows = products
   )
   .join(",\n");
 
-const sql = `-- A.GRAY seed: categories, sample products, local placeholder media, homepage/nav buttons.
+const sql = `-- A.GRAY seed: categories, tiny local fallback products, homepage/nav buttons.
+-- Production catalog (~35 curated Telegram stills) is seeded separately into
+-- public.products + storage bucket product-media — do not treat this file as the live stock.
 -- Run AFTER 001_schema.sql. Re-runnable: upserts by slug/key; media inserted only if product has none.
 
 insert into public.categories (slug, name_ru, name_en, blurb_ru, sort_order, visible)

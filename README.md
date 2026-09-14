@@ -52,7 +52,8 @@ npm start
 
 1. Откройте [SQL editor](https://supabase.com/dashboard/project/sgtkslipwvxmqcalfpvn/sql) проекта **agray.art**.
 2. Вставьте и выполните `supabase/migrations/001_schema.sql` — таблицы, RLS, bucket `product-media`.
-3. Затем `supabase/seed.sql` — категории, 26 изделий, плейсхолдеры фото, кнопки шапки/главной.
+3. Затем `supabase/seed.sql` — категории, крошечный fallback-каталог, кнопки шапки/главной.
+   Боевая витрина (~35 студийных кадров) живёт в Supabase `products` + bucket `product-media`, не в git.
 4. Authentication → Users → **Add user** → email + пароль (например `andrey@agray.art`). Скопируйте UUID.
 5. Выполните (подставьте UUID и email):
 
