@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="MINIMAL  ·  AG-C-2099">
+  <rect width="800" height="1000" fill="#050505"/>
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#1a160c"/>
+      <stop offset="70%" stop-color="#050505"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e4c87a"/>
+      <stop offset="45%" stop-color="#c9a962"/>
+      <stop offset="100%" stop-color="#8a7340"/>
+    </linearGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="0.6"/>
+    </filter>
+  </defs>
+  <rect width="800" height="1000" fill="url(#g)"/>
+  <rect x="28" y="28" width="744" height="944" fill="none" stroke="#c9a962" stroke-opacity="0.22"/>
+  <rect x="36" y="36" width="728" height="928" fill="none" stroke="#c9a962" stroke-opacity="0.08"/>
+  
+    <line x1="400" y1="250" x2="400" y2="720" stroke="url(#gold)" stroke-width="22" stroke-linecap="round"/>
+    <line x1="270" y1="430" x2="530" y2="430" stroke="url(#gold)" stroke-width="22" stroke-linecap="round"/>
+    <line x1="310" y1="390" x2="490" y2="390" stroke="url(#gold)" stroke-width="10" stroke-linecap="round"/>
+       <line x1="340" y1="620" x2="460" y2="560" stroke="url(#gold)" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="400" cy="250" r="10" fill="#e4c87a"/>
+  
+  <text x="400" y="930" text-anchor="middle" fill="#c9a962" fill-opacity="0.55" font-family="Georgia, serif" font-size="18" letter-spacing="6">MINIMAL  ·  AG-C-2099</text>
+</svg>

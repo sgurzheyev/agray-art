@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="ANGEL  ·  AG-I-5788">
+  <rect width="800" height="1000" fill="#050505"/>
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#1a160c"/>
+      <stop offset="70%" stop-color="#050505"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e4c87a"/>
+      <stop offset="45%" stop-color="#c9a962"/>
+      <stop offset="100%" stop-color="#8a7340"/>
+    </linearGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="0.6"/>
+    </filter>
+  </defs>
+  <rect width="800" height="1000" fill="url(#g)"/>
+  <rect x="28" y="28" width="744" height="944" fill="none" stroke="#c9a962" stroke-opacity="0.22"/>
+  <rect x="36" y="36" width="728" height="928" fill="none" stroke="#c9a962" stroke-opacity="0.08"/>
+  
+    <rect x="230" y="220" width="340" height="460" rx="18" fill="none" stroke="url(#gold)" stroke-width="10"/>
+    <rect x="250" y="240" width="300" height="420" rx="8" fill="none" stroke="#c9a962" stroke-opacity="0.35"/>
+    <circle cx="400" cy="390" r="70" fill="none" stroke="url(#gold)" stroke-width="6"/>
+    <circle cx="400" cy="400" r="36" fill="url(#gold)" opacity="0.8"/>
+    <path d="M340 560 Q400 500 460 560" fill="none" stroke="url(#gold)" stroke-width="6"/>
+  
+  <text x="400" y="930" text-anchor="middle" fill="#c9a962" fill-opacity="0.55" font-family="Georgia, serif" font-size="18" letter-spacing="6">ANGEL  ·  AG-I-5788</text>
+</svg>
