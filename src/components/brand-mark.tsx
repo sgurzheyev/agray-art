@@ -18,7 +18,7 @@ export function BrandMark({
   useEffect(() => {
     return subscribeScrollSpin((deg) => {
       if (ref.current) {
-        ref.current.style.transform = `perspective(640px) rotateY(${deg}deg)`;
+        ref.current.style.transform = `perspective(640px) rotateX(8deg) rotateY(${deg}deg)`;
       }
     });
   }, []);

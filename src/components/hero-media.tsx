@@ -3,8 +3,8 @@
 import { useEffect, useRef } from "react";
 import { subscribeScrollSpin } from "@/lib/scroll-spin";
 
-const LAYERS = 10;
-const DEPTH_PX = 3.4;
+const LAYERS = 14;
+const DEPTH_PX = 5.5;
 
 export function HeroMedia() {
   const stageRef = useRef<HTMLDivElement>(null);
@@ -12,7 +12,7 @@ export function HeroMedia() {
   useEffect(() => {
     return subscribeScrollSpin((deg) => {
       if (stageRef.current) {
-        stageRef.current.style.transform = `rotateY(${deg}deg)`;
+        stageRef.current.style.transform = `rotateX(10deg) rotateY(${deg}deg)`;
       }
     });
   }, []);
