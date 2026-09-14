@@ -1,2 +1,2 @@
-Place optional muted looping atelier footage at `atelier.mp4`.
-The home hero uses the chrome AG monogram as a 3D scroll-driven backdrop; video is no longer the primary background.
+The home hero background is the chrome AG diamond monogram (CSS 3D, velocity-driven rotateY).
+Do not restore the old concentric-ellipse “A.GRAY” plate. `poster.svg` is a black fallback only.
