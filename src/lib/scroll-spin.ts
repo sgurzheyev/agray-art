@@ -82,6 +82,8 @@ function bind() {
     if (reduced()) {
       angle = 0;
       vel = 0;
+      running = false;
+      cancelAnimationFrame(raf);
       emit();
     }
   });
