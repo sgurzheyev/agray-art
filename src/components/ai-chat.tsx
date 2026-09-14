@@ -62,17 +62,17 @@ export function AiChat() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="fixed right-4 bottom-4 z-40 flex items-center gap-2 border border-gold bg-ink px-4 py-3 text-[11px] tracking-[0.18em] text-gold uppercase shadow-[0_0_40px_rgba(201,169,98,0.12)] hover:bg-gold hover:text-ink sm:right-6 sm:bottom-6"
+        className="btn-glass-ghost fixed right-4 bottom-4 z-40 flex items-center gap-2 px-4 py-3 text-[11px] tracking-[0.18em] shadow-[0_0_40px_rgba(200,210,220,0.14)] sm:right-6 sm:bottom-6"
       >
         <MessageCircle className="size-4" strokeWidth={1.5} />
         Спросить A.GRAY
       </button>
 
       {open && (
-        <div className="fixed inset-x-0 bottom-0 z-50 flex h-[min(34rem,88dvh)] flex-col border-t border-gold/30 bg-ink sm:inset-x-auto sm:right-6 sm:bottom-6 sm:h-[36rem] sm:w-[24rem] sm:border">
-          <div className="flex items-center justify-between border-b border-gold/20 px-4 py-3">
+        <div className="fixed inset-x-0 bottom-0 z-50 flex h-[min(34rem,88dvh)] flex-col border-t border-silver/30 bg-ink sm:inset-x-auto sm:right-6 sm:bottom-6 sm:h-[36rem] sm:w-[24rem] sm:border">
+          <div className="flex items-center justify-between border-b border-silver/20 px-4 py-3">
             <div>
-              <p className="font-serif text-lg text-gold">A.GRAY</p>
+              <p className="font-serif text-lg text-silver">A.GRAY</p>
               <p className="text-[10px] tracking-[0.2em] text-muted uppercase">
                 Консультант{demo ? " · демо" : ""}
               </p>
@@ -87,8 +87,8 @@ export function AiChat() {
                 key={`${i}-${m.role}`}
                 className={
                   m.role === "user"
-                    ? "ml-8 border border-gold/20 bg-gold/10 px-3 py-2 text-sm text-ivory"
-                    : "mr-8 border border-gold/15 px-3 py-2 text-sm text-ivory/90"
+                    ? "ml-8 border border-silver/20 bg-silver/10 px-3 py-2 text-sm text-ivory"
+                    : "mr-8 border border-silver/15 px-3 py-2 text-sm text-ivory/90"
                 }
               >
                 {m.content}
@@ -96,7 +96,7 @@ export function AiChat() {
             ))}
             {pending && <p className="text-xs tracking-widest text-muted uppercase">Печатает…</p>}
           </div>
-          <form onSubmit={onSubmit} className="flex gap-2 border-t border-gold/20 p-3">
+          <form onSubmit={onSubmit} className="flex gap-2 border-t border-silver/20 p-3">
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -106,7 +106,7 @@ export function AiChat() {
             <button
               type="submit"
               disabled={pending}
-              className="bg-gold p-2 text-ink disabled:opacity-50"
+              className="btn-glass p-2 disabled:opacity-50"
               aria-label="Отправить"
             >
               <Send className="size-4" />

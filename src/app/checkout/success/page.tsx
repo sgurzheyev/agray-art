@@ -11,7 +11,7 @@ export default async function CheckoutSuccessPage({ searchParams }: Props) {
 
   return (
     <div className="mx-auto max-w-xl px-4 py-24 text-center">
-      <p className="text-[11px] tracking-[0.28em] text-gold uppercase">A.GRAY</p>
+      <p className="text-[11px] tracking-[0.28em] text-silver uppercase">A.GRAY</p>
       <h1 className="mt-4 font-serif text-4xl text-ivory">Спасибо</h1>
       <p className="mt-4 text-sm leading-relaxed text-muted">
         {isDemo
@@ -23,7 +23,7 @@ export default async function CheckoutSuccessPage({ searchParams }: Props) {
       )}
       <Link
         href="/catalog"
-        className="mt-10 inline-block border border-gold px-8 py-3 text-xs tracking-[0.28em] text-gold uppercase"
+        className="btn-glass-ghost mt-10 px-8 py-3 text-xs tracking-[0.28em]"
       >
         Вернуться в каталог
       </Link>

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Gold-on-black PWA icons for A.GRAY."""
+"""Silver-on-black PWA icons for A.GRAY."""
 
 from __future__ import annotations
 
@@ -8,8 +8,8 @@ import os
 import struct
 import zlib
 
-GOLD = (201, 169, 98, 255)
-GOLD_SOFT = (228, 200, 122, 255)
+SILVER = (201, 208, 219, 255)
+SILVER_SOFT = (238, 242, 247, 255)
 BLACK = (5, 5, 5, 255)
 TRANSPARENT = (0, 0, 0, 0)
 
@@ -106,14 +106,14 @@ def paint_icon(size: int, maskable: bool = False) -> list[tuple[int, int, int, i
             ring = abs(d - outer + ring_w * 2)
             if ring < ring_w:
                 a = 1 - abs(ring / ring_w)
-                px[i] = blend(px[i], GOLD, a)
+                px[i] = blend(px[i], SILVER, a)
             # inner diamond
             dx = abs(x + 0.5 - cx) / (size * 0.055)
             dy = abs(y + 0.5 - cy + size * 0.18) / (size * 0.08)
             diamond = dx + dy
             if diamond < 1:
                 a = 1 - diamond
-                px[i] = blend(px[i], GOLD_SOFT, min(1, a * 1.6))
+                px[i] = blend(px[i], SILVER_SOFT, min(1, a * 1.6))
 
     scale = size * 0.055
     letter_w = 7 * scale
@@ -121,8 +121,8 @@ def paint_icon(size: int, maskable: bool = False) -> list[tuple[int, int, int, i
     total = letter_w * 2 + gap
     ax = cx - total / 2
     ay = cy - (8 * scale) / 2 - size * 0.04
-    stamp_glyph(px, size, size, A, ax, ay, scale, GOLD)
-    stamp_glyph(px, size, size, G, ax + letter_w + gap, ay, scale, GOLD)
+    stamp_glyph(px, size, size, A, ax, ay, scale, SILVER)
+    stamp_glyph(px, size, size, G, ax + letter_w + gap, ay, scale, SILVER)
     return px
 
 

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s · A.GRAY",
   },
   description:
-    "Авторские украшения A.GRAY. Кольца, браслеты, кресты, серьги, подвески, иконы, цепи, обручальные и линия SPORT. Ателье Андрея.",
+    "A.GRAY — свет, тишина, форма. Кольца, браслеты, кресты, серьги, подвески, иконы, цепи, обручальные и линия SPORT.",
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "A.GRAY — ювелирный дом",
-    description: "Чёрное и золото. Ручная работа.",
+    description: "Свет. Тишина. Форма. Ручная работа.",
     url: siteUrl,
     locale: "ru_RU",
     type: "website",

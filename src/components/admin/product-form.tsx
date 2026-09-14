@@ -211,12 +211,12 @@ export function ProductForm({ productId }: { productId?: string }) {
   function field(key: keyof FormState, label: string, type = "text") {
     return (
       <label className="block">
-        <span className="text-[11px] tracking-[0.18em] text-gold uppercase">{label}</span>
+        <span className="text-[11px] tracking-[0.18em] text-silver uppercase">{label}</span>
         <input
           type={type}
           value={form[key] as string}
           onChange={(e) => setForm((f) => ({ ...f, [key]: e.target.value }))}
-          className="mt-1 w-full border border-gold/20 bg-transparent px-3 py-2 text-sm outline-none focus:border-gold"
+          className="mt-1 w-full border border-silver/20 bg-transparent px-3 py-2 text-sm outline-none focus:border-silver"
         />
       </label>
     );
@@ -231,11 +231,11 @@ export function ProductForm({ productId }: { productId?: string }) {
           {field("sku", "Артикул")}
         </div>
         <label className="block">
-          <span className="text-[11px] tracking-[0.18em] text-gold uppercase">Категория</span>
+          <span className="text-[11px] tracking-[0.18em] text-silver uppercase">Категория</span>
           <select
             value={form.category_id}
             onChange={(e) => setForm((f) => ({ ...f, category_id: e.target.value }))}
-            className="mt-1 w-full border border-gold/20 bg-ink px-3 py-2 text-sm"
+            className="mt-1 w-full border border-silver/20 bg-ink px-3 py-2 text-sm"
           >
             {cats.map((c) => (
               <option key={c.id} value={c.id}>
@@ -245,12 +245,12 @@ export function ProductForm({ productId }: { productId?: string }) {
           </select>
         </label>
         <label className="block">
-          <span className="text-[11px] tracking-[0.18em] text-gold uppercase">Описание</span>
+          <span className="text-[11px] tracking-[0.18em] text-silver uppercase">Описание</span>
           <textarea
             rows={6}
             value={form.description_ru}
             onChange={(e) => setForm((f) => ({ ...f, description_ru: e.target.value }))}
-            className="mt-1 w-full border border-gold/20 bg-transparent px-3 py-2 text-sm outline-none focus:border-gold"
+            className="mt-1 w-full border border-silver/20 bg-transparent px-3 py-2 text-sm outline-none focus:border-silver"
           />
         </label>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -266,11 +266,11 @@ export function ProductForm({ productId }: { productId?: string }) {
       </div>
       <div className="space-y-4">
         <label className="block">
-          <span className="text-[11px] tracking-[0.18em] text-gold uppercase">Статус</span>
+          <span className="text-[11px] tracking-[0.18em] text-silver uppercase">Статус</span>
           <select
             value={form.status}
             onChange={(e) => setForm((f) => ({ ...f, status: e.target.value as FormState["status"] }))}
-            className="mt-1 w-full border border-gold/20 bg-ink px-3 py-2 text-sm"
+            className="mt-1 w-full border border-silver/20 bg-ink px-3 py-2 text-sm"
           >
             <option value="published">Опубликовано</option>
             <option value="draft">Черновик</option>
@@ -289,13 +289,13 @@ export function ProductForm({ productId }: { productId?: string }) {
         <button
           type="submit"
           disabled={busy}
-          className="w-full bg-gold py-3 text-xs tracking-[0.24em] text-ink uppercase disabled:opacity-60"
+          className="btn-glass w-full py-3 text-xs tracking-[0.24em] disabled:opacity-60"
         >
           {productId ? "Сохранить" : "Создать"}
         </button>
         {productId && (
-          <div className="border border-gold/20 p-4">
-            <p className="text-[11px] tracking-[0.18em] text-gold uppercase">Фото и видео</p>
+          <div className="border border-silver/20 p-4">
+            <p className="text-[11px] tracking-[0.18em] text-silver uppercase">Фото и видео</p>
             <div className="mt-3 grid grid-cols-2 gap-2">
               {media.map((m) => (
                 <div key={m.id} className="relative bg-black">
@@ -306,7 +306,7 @@ export function ProductForm({ productId }: { productId?: string }) {
                     <img src={m.url} alt="" className="aspect-square w-full object-cover" />
                   )}
                   <div className="flex justify-between gap-1 p-1 text-[10px]">
-                    <button type="button" className="text-gold" onClick={() => setPrimary(m.id)}>
+                    <button type="button" className="text-silver" onClick={() => setPrimary(m.id)}>
                       {m.is_primary ? "главное" : "в главные"}
                     </button>
                     <button type="button" className="text-muted" onClick={() => removeMedia(m)}>

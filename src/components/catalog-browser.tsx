@@ -46,12 +46,12 @@ export function CatalogBrowser({
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Поиск: артикул, металл, название"
-          className="w-full border border-gold/20 bg-transparent px-3 py-2.5 text-sm text-ivory outline-none placeholder:text-muted focus:border-gold sm:max-w-sm"
+          className="w-full border border-silver/20 bg-transparent px-3 py-2.5 text-sm text-ivory outline-none placeholder:text-muted focus:border-silver sm:max-w-sm"
         />
         <select
           value={sort}
           onChange={(e) => setSort(e.target.value as typeof sort)}
-          className="border border-gold/20 bg-ink px-3 py-2.5 text-sm text-ivory outline-none"
+          className="border border-silver/20 bg-ink px-3 py-2.5 text-sm text-ivory outline-none"
         >
           <option value="new">По каталогу</option>
           <option value="price-asc">Сначала доступнее</option>
@@ -81,8 +81,8 @@ function Chip({
     <Link
       href={href}
       className={classNames(
-        "shrink-0 border px-3 py-1.5 text-[11px] tracking-[0.18em] uppercase",
-        current ? "border-gold bg-gold text-ink" : "border-gold/25 text-muted hover:text-gold",
+        "shrink-0 px-3 py-1.5 text-[11px] tracking-[0.18em] uppercase",
+        current ? "btn-glass" : "border border-silver/25 text-muted hover:text-silver",
       )}
     >
       {children}

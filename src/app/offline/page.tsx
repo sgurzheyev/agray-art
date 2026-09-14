@@ -6,9 +6,9 @@ export const metadata: Metadata = { title: "Офлайн" };
 export default function OfflinePage() {
   return (
     <div className="mx-auto max-w-md px-4 py-24 text-center">
-      <p className="font-serif text-4xl text-gold">A.GRAY</p>
+      <p className="font-serif text-4xl text-silver">A.GRAY</p>
       <p className="mt-6 text-sm text-muted">Нет сети. Откройте сохранённые страницы или попробуйте снова.</p>
-      <Link href="/" className="mt-8 inline-block text-xs tracking-[0.28em] text-gold uppercase">
+      <Link href="/" className="mt-8 inline-block text-xs tracking-[0.28em] text-silver uppercase">
         На главную
       </Link>
     </div>

@@ -31,13 +31,13 @@ export function BuyPanel({ product }: { product: Product }) {
     <div className="mt-8 space-y-5">
       {product.sizes.length > 0 && (
         <label className="block">
-          <span className="text-[11px] tracking-[0.24em] text-gold uppercase">
+          <span className="text-[11px] tracking-[0.24em] text-silver uppercase">
             {product.sizeLabel ?? "Размер"}
           </span>
           <select
             value={size}
             onChange={(e) => setSize(e.target.value)}
-            className="mt-2 w-full border border-gold/25 bg-ink px-3 py-3 text-ivory outline-none focus:border-gold"
+            className="mt-2 w-full border border-silver/25 bg-ink px-3 py-3 text-ivory outline-none focus:border-silver"
           >
             {product.sizes.map((s) => (
               <option key={s} value={s}>
@@ -48,22 +48,22 @@ export function BuyPanel({ product }: { product: Product }) {
         </label>
       )}
       <label className="block">
-        <span className="text-[11px] tracking-[0.24em] text-gold uppercase">Количество</span>
+        <span className="text-[11px] tracking-[0.24em] text-silver uppercase">Количество</span>
         <input
           type="number"
           min={1}
           max={10}
           value={qty}
           onChange={(e) => setQty(Math.max(1, Number(e.target.value) || 1))}
-          className="mt-2 w-24 border border-gold/25 bg-ink px-3 py-3 text-ivory outline-none focus:border-gold"
+          className="mt-2 w-24 border border-silver/25 bg-ink px-3 py-3 text-ivory outline-none focus:border-silver"
         />
       </label>
-      <p className="font-serif text-3xl text-gold">{formatPrice(product.price)}</p>
+      <p className="font-serif text-3xl text-silver">{formatPrice(product.price)}</p>
       <div className="flex flex-col gap-3 sm:flex-row">
         <button
           type="button"
           onClick={addToCart}
-          className="flex-1 bg-gold px-6 py-3.5 text-center text-xs tracking-[0.28em] text-ink uppercase transition hover:bg-gold-bright"
+          className="btn-glass flex-1 px-6 py-3.5 text-center text-xs tracking-[0.28em] uppercase"
         >
           В корзину
         </button>
@@ -73,7 +73,7 @@ export function BuyPanel({ product }: { product: Product }) {
             addToCart();
             router.push("/checkout");
           }}
-          className="flex-1 border border-gold px-6 py-3.5 text-center text-xs tracking-[0.28em] text-gold uppercase transition hover:bg-gold/10"
+          className="btn-glass-ghost flex-1 px-6 py-3.5 text-center text-xs tracking-[0.28em] uppercase"
         >
           Купить
         </button>

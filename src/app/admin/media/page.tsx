@@ -12,7 +12,7 @@ export default async function AdminMediaPage() {
   }
   return (
     <AdminFrame email={session.user!.email}>
-      <p className="text-[11px] tracking-[0.28em] text-gold uppercase">Файлы</p>
+      <p className="text-[11px] tracking-[0.28em] text-silver uppercase">Файлы</p>
       <h1 className="mt-2 font-serif text-4xl text-ivory">Медиатека</h1>
       <p className="mt-2 text-sm text-muted">
         Снимки и ролики изделий. Загрузка новых — в карточке изделия. Bucket: product-media.

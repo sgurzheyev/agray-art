@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "A.GRAY — ювелирный дом",
     short_name: "A.GRAY",
-    description: "Авторские украшения. Чёрное и золото. Ателье Андрея.",
+    description: "Авторские украшения. Свет. Тишина. Форма.",
     start_url: "/",
     scope: "/",
     display: "standalone",

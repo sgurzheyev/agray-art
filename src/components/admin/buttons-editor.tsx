@@ -90,7 +90,7 @@ export function ButtonsEditor() {
   return (
     <div>
       {error && <p className="mb-4 text-sm text-red-400">{error}</p>}
-      <button type="button" onClick={add} className="mb-6 border border-gold px-4 py-2 text-xs tracking-[0.2em] text-gold uppercase">
+      <button type="button" onClick={add} className="mb-6 border border-silver px-4 py-2 text-xs tracking-[0.2em] text-silver uppercase">
         Добавить кнопку
       </button>
       {groups.map((g) => {
@@ -101,16 +101,16 @@ export function ButtonsEditor() {
             <h2 className="font-serif text-2xl text-ivory">{g.title}</h2>
             <ul className="mt-4 space-y-3">
               {list.map((row) => (
-                <li key={row.id} className="grid gap-2 border border-gold/20 p-3 sm:grid-cols-[1fr_1fr_auto_auto]">
+                <li key={row.id} className="grid gap-2 border border-silver/20 p-3 sm:grid-cols-[1fr_1fr_auto_auto]">
                   <input
                     value={row.label_ru}
                     onChange={(e) => patch(row.id, { label_ru: e.target.value })}
-                    className="border border-gold/15 bg-transparent px-2 py-1 text-sm"
+                    className="border border-silver/15 bg-transparent px-2 py-1 text-sm"
                   />
                   <input
                     value={row.href}
                     onChange={(e) => patch(row.id, { href: e.target.value })}
-                    className="border border-gold/15 bg-transparent px-2 py-1 text-sm"
+                    className="border border-silver/15 bg-transparent px-2 py-1 text-sm"
                   />
                   <label className="flex items-center gap-1 text-xs text-muted">
                     <input
@@ -121,7 +121,7 @@ export function ButtonsEditor() {
                     видна
                   </label>
                   <div className="flex gap-2">
-                    <button type="button" className="text-xs text-gold uppercase" onClick={() => save(row)}>
+                    <button type="button" className="text-xs text-silver uppercase" onClick={() => save(row)}>
                       Сохранить
                     </button>
                     <button type="button" className="text-xs text-muted" onClick={() => remove(row.id)}>

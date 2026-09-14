@@ -3,34 +3,34 @@
   <rect width="800" height="1000" fill="#050505"/>
   <defs>
     <radialGradient id="g" cx="50%" cy="38%" r="55%">
-      <stop offset="0%" stop-color="#1a160c"/>
+      <stop offset="0%" stop-color="#16181e"/>
       <stop offset="70%" stop-color="#050505"/>
     </radialGradient>
-    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#e4c87a"/>
-      <stop offset="45%" stop-color="#c9a962"/>
-      <stop offset="100%" stop-color="#8a7340"/>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef2f7"/>
+      <stop offset="45%" stop-color="#c9d0db"/>
+      <stop offset="100%" stop-color="#7b8492"/>
     </linearGradient>
     <filter id="soft">
       <feGaussianBlur stdDeviation="0.6"/>
     </filter>
   </defs>
   <rect width="800" height="1000" fill="url(#g)"/>
-  <rect x="28" y="28" width="744" height="944" fill="none" stroke="#c9a962" stroke-opacity="0.22"/>
-  <rect x="36" y="36" width="728" height="928" fill="none" stroke="#c9a962" stroke-opacity="0.08"/>
-  <rect x="592" y="450" width="36" height="20" rx="8" fill="none" stroke="url(#gold)" stroke-width="5" transform="rotate(0 610 460)"/>
-<rect x="571.203462259508" y="489.9173039988153" width="36" height="20" rx="8" fill="none" stroke="url(#gold)" stroke-width="5" transform="rotate(25.714285714285715 589.203462259508 499.9173039988153)"/>
-<rect x="512.9328583903341" y="521.9284963870588" width="36" height="20" rx="8" fill="none" stroke="url(#gold)" stroke-width="5" transform="rotate(51.42857142857143 530.9328583903341 531.9284963870588)"/>
-<rect x="428.72939613082605" y="539.6933679207277" width="36" height="20" rx="8" fill="none" stroke="url(#gold)" stroke-width="5" transform="rotate(77.14285714285715 446.72939613082605 549.6933679207277)"/>
-<rect x="335.270603869174" y="539.6933679207277" width="36" height="20" rx="8" fill="none" stroke="url(#gold)" stroke-width="5" transform="rotate(102.85714285714286 353.270603869174 549.6933679207277)"/>
-<rect x="251.067141609666" y="521.9284963870588" width="36" height="20" rx="8" fill="none" stroke="url(#gold)" stroke-width="5" transform="rotate(128.57142857142856 269.067141609666 531.9284963870588)"/>
-<rect x="192.796537740492" y="489.9173039988153" width="36" height="20" rx="8" fill="none" stroke="url(#gold)" stroke-width="5" transform="rotate(154.2857142857143 210.796537740492 499.9173039988153)"/>
-<rect x="172" y="450" width="36" height="20" rx="8" fill="none" stroke="url(#gold)" stroke-width="5" transform="rotate(180 190 460)"/>
-<rect x="192.79653774049197" y="410.0826960011847" width="36" height="20" rx="8" fill="none" stroke="url(#gold)" stroke-width="5" transform="rotate(205.71428571428572 210.79653774049197 420.0826960011847)"/>
-<rect x="251.0671416096659" y="378.0715036129413" width="36" height="20" rx="8" fill="none" stroke="url(#gold)" stroke-width="5" transform="rotate(231.42857142857142 269.0671416096659 388.0715036129413)"/>
-<rect x="335.27060386917395" y="360.3066320792722" width="36" height="20" rx="8" fill="none" stroke="url(#gold)" stroke-width="5" transform="rotate(257.1428571428571 353.27060386917395 370.3066320792722)"/>
-<rect x="428.729396130826" y="360.3066320792722" width="36" height="20" rx="8" fill="none" stroke="url(#gold)" stroke-width="5" transform="rotate(282.85714285714283 446.729396130826 370.3066320792722)"/>
-<rect x="512.932858390334" y="378.0715036129412" width="36" height="20" rx="8" fill="none" stroke="url(#gold)" stroke-width="5" transform="rotate(308.5714285714286 530.932858390334 388.0715036129412)"/>
-<rect x="571.203462259508" y="410.0826960011846" width="36" height="20" rx="8" fill="none" stroke="url(#gold)" stroke-width="5" transform="rotate(334.2857142857143 589.203462259508 420.0826960011846)"/>
-  <text x="400" y="930" text-anchor="middle" fill="#c9a962" fill-opacity="0.55" font-family="Georgia, serif" font-size="18" letter-spacing="6">VENICE  ·  AG-B-1188</text>
+  <rect x="28" y="28" width="744" height="944" fill="none" stroke="#c9d0db" stroke-opacity="0.22"/>
+  <rect x="36" y="36" width="728" height="928" fill="none" stroke="#c9d0db" stroke-opacity="0.08"/>
+  <rect x="592" y="450" width="36" height="20" rx="8" fill="none" stroke="url(#silver)" stroke-width="5" transform="rotate(0 610 460)"/>
+<rect x="571.203462259508" y="489.9173039988153" width="36" height="20" rx="8" fill="none" stroke="url(#silver)" stroke-width="5" transform="rotate(25.714285714285715 589.203462259508 499.9173039988153)"/>
+<rect x="512.9328583903341" y="521.9284963870588" width="36" height="20" rx="8" fill="none" stroke="url(#silver)" stroke-width="5" transform="rotate(51.42857142857143 530.9328583903341 531.9284963870588)"/>
+<rect x="428.72939613082605" y="539.6933679207277" width="36" height="20" rx="8" fill="none" stroke="url(#silver)" stroke-width="5" transform="rotate(77.14285714285715 446.72939613082605 549.6933679207277)"/>
+<rect x="335.270603869174" y="539.6933679207277" width="36" height="20" rx="8" fill="none" stroke="url(#silver)" stroke-width="5" transform="rotate(102.85714285714286 353.270603869174 549.6933679207277)"/>
+<rect x="251.067141609666" y="521.9284963870588" width="36" height="20" rx="8" fill="none" stroke="url(#silver)" stroke-width="5" transform="rotate(128.57142857142856 269.067141609666 531.9284963870588)"/>
+<rect x="192.796537740492" y="489.9173039988153" width="36" height="20" rx="8" fill="none" stroke="url(#silver)" stroke-width="5" transform="rotate(154.2857142857143 210.796537740492 499.9173039988153)"/>
+<rect x="172" y="450" width="36" height="20" rx="8" fill="none" stroke="url(#silver)" stroke-width="5" transform="rotate(180 190 460)"/>
+<rect x="192.79653774049197" y="410.0826960011847" width="36" height="20" rx="8" fill="none" stroke="url(#silver)" stroke-width="5" transform="rotate(205.71428571428572 210.79653774049197 420.0826960011847)"/>
+<rect x="251.0671416096659" y="378.0715036129413" width="36" height="20" rx="8" fill="none" stroke="url(#silver)" stroke-width="5" transform="rotate(231.42857142857142 269.0671416096659 388.0715036129413)"/>
+<rect x="335.27060386917395" y="360.3066320792722" width="36" height="20" rx="8" fill="none" stroke="url(#silver)" stroke-width="5" transform="rotate(257.1428571428571 353.27060386917395 370.3066320792722)"/>
+<rect x="428.729396130826" y="360.3066320792722" width="36" height="20" rx="8" fill="none" stroke="url(#silver)" stroke-width="5" transform="rotate(282.85714285714283 446.729396130826 370.3066320792722)"/>
+<rect x="512.932858390334" y="378.0715036129412" width="36" height="20" rx="8" fill="none" stroke="url(#silver)" stroke-width="5" transform="rotate(308.5714285714286 530.932858390334 388.0715036129412)"/>
+<rect x="571.203462259508" y="410.0826960011846" width="36" height="20" rx="8" fill="none" stroke="url(#silver)" stroke-width="5" transform="rotate(334.2857142857143 589.203462259508 420.0826960011846)"/>
+  <text x="400" y="930" text-anchor="middle" fill="#c9d0db" fill-opacity="0.55" font-family="Georgia, serif" font-size="18" letter-spacing="6">VENICE  ·  AG-B-1188</text>
 </svg>

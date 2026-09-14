@@ -18,7 +18,7 @@ export default function AtelierPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
         <div className="relative mx-auto flex min-h-[50dvh] max-w-6xl flex-col justify-end px-4 pb-12 sm:px-6">
-          <p className="text-[11px] tracking-[0.28em] text-gold uppercase">Workshop</p>
+          <p className="text-[11px] tracking-[0.28em] text-silver uppercase">Workshop</p>
           <h1 className="mt-2 font-serif text-5xl text-ivory">Ателье Андрея</h1>
         </div>
       </section>
@@ -38,8 +38,8 @@ export default function AtelierPage() {
             и эта страница.
           </p>
         </div>
-        <div className="border border-gold/20 p-8">
-          <p className="text-[11px] tracking-[0.28em] text-gold uppercase">Визит</p>
+        <div className="border border-silver/20 p-8">
+          <p className="text-[11px] tracking-[0.28em] text-silver uppercase">Визит</p>
           <ul className="mt-6 space-y-4 text-sm text-ivory/85">
             <li>Примерка колец и обручальных пар</li>
             <li>Подбор цепи к кресту и иконе</li>
@@ -48,7 +48,7 @@ export default function AtelierPage() {
           </ul>
           <Link
             href="/catalog"
-            className="mt-8 inline-block bg-gold px-6 py-3 text-xs tracking-[0.28em] text-ink uppercase"
+            className="btn-glass mt-8 px-6 py-3 text-xs tracking-[0.28em]"
           >
             К коллекции
           </Link>

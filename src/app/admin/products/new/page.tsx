@@ -12,7 +12,7 @@ export default async function NewProductPage() {
   }
   return (
     <AdminFrame email={session.user!.email}>
-      <p className="text-[11px] tracking-[0.28em] text-gold uppercase">Каталог</p>
+      <p className="text-[11px] tracking-[0.28em] text-silver uppercase">Каталог</p>
       <h1 className="mt-2 font-serif text-4xl text-ivory">Новое изделие</h1>
       <p className="mt-2 text-sm text-muted">После создания откроется загрузка фото и видео.</p>
       <div className="mt-8">

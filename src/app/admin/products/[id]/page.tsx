@@ -19,7 +19,7 @@ export default async function EditProductPage({ params }: Props) {
 
   return (
     <AdminFrame email={session.user!.email}>
-      <p className="text-[11px] tracking-[0.28em] text-gold uppercase">Каталог</p>
+      <p className="text-[11px] tracking-[0.28em] text-silver uppercase">Каталог</p>
       <h1 className="mt-2 font-serif text-4xl text-ivory">{data.title_ru}</h1>
       <p className="mt-2 text-sm text-muted">Цена в рублях. Фото — в хранилище product-media или локальный URL.</p>
       <div className="mt-8">

@@ -18,14 +18,14 @@ export function AdminFrame({
 }) {
   return (
     <div className="flex min-h-dvh">
-      <aside className="flex w-52 shrink-0 flex-col border-r border-gold/20 bg-ink-soft px-4 py-6">
-        <Link href="/admin" className="font-serif text-xl tracking-[0.28em] text-gold">
+      <aside className="flex w-52 shrink-0 flex-col border-r border-silver/20 bg-ink-soft px-4 py-6">
+        <Link href="/admin" className="font-serif text-xl tracking-[0.28em] text-silver">
           A.GRAY
         </Link>
         <p className="mt-1 text-[10px] tracking-[0.2em] text-muted uppercase">Админка</p>
         <nav className="mt-8 flex flex-col gap-3 text-[11px] tracking-[0.18em] uppercase">
           {links.map((l) => (
-            <Link key={l.href} href={l.href} className="text-ivory/80 hover:text-gold">
+            <Link key={l.href} href={l.href} className="text-ivory/80 hover:text-silver">
               {l.label}
             </Link>
           ))}
@@ -33,11 +33,11 @@ export function AdminFrame({
         <div className="mt-auto space-y-3 pt-8 text-xs text-muted">
           <p className="break-all">{email}</p>
           <form action={signOutAdmin}>
-            <button type="submit" className="text-gold uppercase tracking-widest">
+            <button type="submit" className="text-silver uppercase tracking-widest">
               Выйти
             </button>
           </form>
-          <Link href="/" className="block hover:text-gold">
+          <Link href="/" className="block hover:text-silver">
             На сайт
           </Link>
         </div>
