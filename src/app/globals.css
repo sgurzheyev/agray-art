@@ -74,7 +74,7 @@ a {
 }
 
 .hero-backdrop {
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: 0;
   overflow: hidden;
@@ -178,11 +178,27 @@ a {
 .hero-backdrop-veil {
   position: absolute;
   inset: 0;
+  background:
+    radial-gradient(
+      ellipse 72% 68% at 50% 42%,
+      rgba(5, 5, 5, 0.1) 0%,
+      rgba(5, 5, 5, 0.36) 58%,
+      rgba(5, 5, 5, 0.55) 100%
+    ),
+    linear-gradient(to bottom, rgba(5, 5, 5, 0.16), rgba(5, 5, 5, 0.3));
+}
+
+.hero-copy-veil {
+  pointer-events: none;
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 46%;
   background: linear-gradient(
     to top,
-    rgba(5, 5, 5, 0.9) 0%,
-    rgba(5, 5, 5, 0.38) 22%,
-    transparent 46%
+    rgba(5, 5, 5, 0.88) 0%,
+    rgba(5, 5, 5, 0.42) 48%,
+    transparent 100%
   );
 }
 

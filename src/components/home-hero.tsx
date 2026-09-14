@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { BrandName } from "@/components/brand-name";
-import { HeroMedia } from "@/components/hero-media";
 
 export function HomeHero({
   primaryHref = "/catalog",
@@ -14,8 +13,8 @@ export function HomeHero({
   secondaryLabel?: string;
 }) {
   return (
-    <section className="relative isolate min-h-[88dvh] overflow-hidden bg-ink">
-      <HeroMedia />
+    <section className="relative min-h-[88dvh] bg-transparent">
+      <div className="hero-copy-veil" />
       <div className="relative z-10 mx-auto flex min-h-[88dvh] max-w-6xl flex-col justify-end px-4 pb-16 sm:px-6 sm:pb-24">
         <p className="text-[11px] tracking-[0.42em] text-silver uppercase">Ювелирный дом · Москва</p>
         <BrandName as="h1" className="mt-4 text-5xl leading-none text-ivory sm:text-7xl" tracking="0.12em" />
