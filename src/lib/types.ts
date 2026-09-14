@@ -8,6 +8,7 @@ export const CATEGORY_SLUGS = [
   "chains",
   "wedding",
   "sport",
+  "others",
 ] as const;
 
 export type CategorySlug = (typeof CATEGORY_SLUGS)[number] | string;

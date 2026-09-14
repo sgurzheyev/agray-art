@@ -99,7 +99,9 @@ export function relatedProducts(product: Product, limit = 4): Product[] {
 
 export function categoryCover(slug: CategorySlug, list: Product[] = products): string {
   const first = list.find((p) => p.category === slug);
-  return first ? productImage(first, 1) : "/brand/ag-logo.webp";
+  if (first) return productImage(first, 1);
+  if (slug === "others") return "/media/categories/others.svg";
+  return "/brand/ag-logo.webp";
 }
 
 export function productImage(product: Product, index = 1): string {

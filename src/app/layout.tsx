@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s · A.GRAY",
   },
   description:
-    "A.GRAY — свет, тишина, форма. Кольца, браслеты, кресты, серьги, подвески, иконы, цепи, обручальные и линия SPORT.",
+    "A.GRAY — свет, тишина, форма. Кольца, браслеты, кресты, серьги, подвески, иконы, цепи, обручальные, линия SPORT и OTHERS.",
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [

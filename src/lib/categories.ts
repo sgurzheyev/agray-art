@@ -55,6 +55,12 @@ export const categories: Category[] = [
     nameEn: "Sport",
     blurb: "Мужская спортивная линия: каучук, золото, геометрия.",
   },
+  {
+    slug: "others",
+    name: "OTHERS",
+    nameEn: "Others",
+    blurb: "Остальное: редкие формы, ремонт, вещи вне основных линий.",
+  },
 ];
 
 export function getCategory(slug: string): Category | undefined {

@@ -11,7 +11,8 @@ values
   ('icons', 'Иконы', 'Icons', 'Нательные иконки, чеканка и эмаль.', 6, true),
   ('chains', 'Цепи', 'Chains', 'Бисмарк, якорь, box — разный характер звена.', 7, true),
   ('wedding', 'Обручальные', 'Wedding', 'Парные кольца: классика, сатин, comfort fit.', 8, true),
-  ('sport', 'SPORT', 'Sport', 'Мужская спортивная линия: каучук, золото, геометрия.', 9, true)
+  ('sport', 'SPORT', 'Sport', 'Мужская спортивная линия: каучук, золото, геометрия.', 9, true),
+  ('others', 'OTHERS', 'Others', 'Остальное: редкие формы, ремонт, вещи вне основных линий.', 10, true)
 on conflict (slug) do update set
   name_ru = excluded.name_ru,
   name_en = excluded.name_en,

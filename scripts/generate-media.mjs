@@ -133,6 +133,18 @@ function sport() {
   `;
 }
 
+function others() {
+  return `
+    <circle cx="310" cy="435" r="28" fill="none" stroke="url(#silver)" stroke-width="12"/>
+    <circle cx="400" cy="435" r="28" fill="none" stroke="url(#silver)" stroke-width="12"/>
+    <circle cx="490" cy="435" r="28" fill="none" stroke="url(#silver)" stroke-width="12"/>
+    <circle cx="310" cy="435" r="8" fill="${SILVER2}"/>
+    <circle cx="400" cy="435" r="8" fill="${SILVER}"/>
+    <circle cx="490" cy="435" r="8" fill="${SILVER2}"/>
+    <text x="400" y="620" text-anchor="middle" fill="${SILVER}" font-family="Georgia, serif" font-size="28" letter-spacing="10">OTHERS</text>
+  `;
+}
+
 function hoops() {
   return `
     <ellipse cx="310" cy="460" rx="70" ry="160" fill="none" stroke="url(#silver)" stroke-width="14"/>
@@ -164,6 +176,7 @@ const kinds = {
   chain: () => chain(),
   wedding: () => wedding(),
   sport: () => sport(),
+  others: () => others(),
   signet: () => signet(),
 };
 

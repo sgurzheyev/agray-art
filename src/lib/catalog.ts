@@ -99,6 +99,12 @@ function mapProduct(row: ProductRow): Product {
   };
 }
 
+function withLocalCategories(remote: Category[]): Category[] {
+  const have = new Set(remote.map((c) => c.slug));
+  const missing = localCategories.filter((c) => !have.has(c.slug));
+  return missing.length ? [...remote, ...missing] : remote;
+}
+
 function hydrateLocal(product: Product): Product {
   const images = productImages(product);
   return {
@@ -149,7 +155,9 @@ export const loadCatalog = cache(async () => {
     if (remote) {
       return {
         ...remote,
-        categories: remote.categories.length ? remote.categories : localCategories,
+        categories: withLocalCategories(
+          remote.categories.length ? remote.categories : localCategories,
+        ),
       };
     }
   }

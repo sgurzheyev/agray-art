@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Каталог",
-  description: "Кольца, браслеты, кресты, серьги, подвески, иконы, цепи, обручальные, SPORT.",
+  description: "Кольца, браслеты, кресты, серьги, подвески, иконы, цепи, обручальные, SPORT, OTHERS.",
 };
 
 export default async function CatalogPage() {
