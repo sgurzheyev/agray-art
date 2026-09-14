@@ -17,8 +17,6 @@ export function HeroMedia() {
     });
   }, []);
 
-  const backZ = -((LAYERS - 1) * DEPTH_PX);
-
   return (
     <div className="hero-backdrop" aria-hidden="true">
       <div className="hero-backdrop-scene">
@@ -41,19 +39,6 @@ export function HeroMedia() {
               }}
             />
           ))}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/brand/ag-logo.webp"
-            alt=""
-            width={800}
-            height={800}
-            decoding="async"
-            className="hero-logo-3d-layer"
-            style={{
-              transform: `translateZ(${backZ}px) rotateY(180deg)`,
-              opacity: 0.92,
-            }}
-          />
         </div>
       </div>
       <div className="hero-backdrop-veil" />
