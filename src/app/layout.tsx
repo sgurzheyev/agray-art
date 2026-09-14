@@ -4,6 +4,7 @@ import { AppChrome } from "@/components/app-chrome";
 import { CartProvider } from "@/components/cart-provider";
 import { PwaRegister } from "@/components/pwa-register";
 import { getSiteButtons, getVisibleCategories } from "@/lib/catalog";
+import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -17,10 +18,8 @@ const manrope = Manrope({
   variable: "--font-manrope",
 });
 
-const site = process.env.NEXT_PUBLIC_SITE_URL ?? "https://agray.art";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(site),
+  metadataBase: new URL(siteUrl),
   applicationName: "A.GRAY",
   title: {
     default: "A.GRAY — ювелирный дом",
@@ -44,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "A.GRAY — ювелирный дом",
     description: "Чёрное и золото. Ручная работа.",
-    url: site,
+    url: siteUrl,
     locale: "ru_RU",
     type: "website",
   },

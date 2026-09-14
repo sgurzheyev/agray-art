@@ -35,7 +35,7 @@ npm start
 
 | Переменная | Назначение |
 | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Канонический URL (Stripe success/cancel, OG). Локально `http://localhost:3000` |
+| `NEXT_PUBLIC_SITE_URL` | Канонический абсолютный URL (Stripe, OG). Пустое значение на Vercel не ломает build: берётся `VERCEL_URL` или `https://agray.art`. Локально можно `http://localhost:3000` |
 | `NEXT_PUBLIC_SUPABASE_URL` | `https://sgtkslipwvxmqcalfpvn.supabase.co` |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | anon/public key из Project Settings → API |
 | `SUPABASE_SERVICE_ROLE_KEY` | service_role (только сервер: заказы). Не отдавать в браузер |

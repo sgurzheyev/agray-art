@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { getProductBySlug } from "@/lib/catalog";
+import { resolveSiteUrl } from "@/lib/site-url";
 import { createServiceSupabase } from "@/lib/supabase/service";
 
 type IncomingItem = { slug: string; qty: number; size?: string };
@@ -39,7 +40,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Корзина пуста" }, { status: 400 });
   }
 
-  const origin = process.env.NEXT_PUBLIC_SITE_URL || new URL(req.url).origin;
+  const origin = resolveSiteUrl(new URL(req.url).origin);
   const secret = process.env.STRIPE_SECRET_KEY;
   const customer = body.customer ?? {};
 
