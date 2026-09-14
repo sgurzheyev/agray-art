@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="SATIN  ·  AG-W-8044">
+  <rect width="800" height="1000" fill="#050505"/>
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#1a160c"/>
+      <stop offset="70%" stop-color="#050505"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e4c87a"/>
+      <stop offset="45%" stop-color="#c9a962"/>
+      <stop offset="100%" stop-color="#8a7340"/>
+    </linearGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="0.6"/>
+    </filter>
+  </defs>
+  <rect width="800" height="1000" fill="url(#g)"/>
+  <rect x="28" y="28" width="744" height="944" fill="none" stroke="#c9a962" stroke-opacity="0.22"/>
+  <rect x="36" y="36" width="728" height="928" fill="none" stroke="#c9a962" stroke-opacity="0.08"/>
+  
+    <g transform="translate(-54 10)"><ellipse cx="400" cy="470" rx="128" ry="128" fill="none" stroke="url(#gold)" stroke-width="18"/>
+    <ellipse cx="400" cy="470" rx="118.1" ry="118.1" fill="none" stroke="#e4c87a" stroke-opacity="0.35" stroke-width="1.2"/></g>
+    <g transform="translate(54 -10)"><ellipse cx="400" cy="470" rx="128" ry="128" fill="none" stroke="url(#gold)" stroke-width="18"/>
+    <ellipse cx="400" cy="470" rx="118.1" ry="118.1" fill="none" stroke="#e4c87a" stroke-opacity="0.35" stroke-width="1.2"/></g>
+  
+  <text x="400" y="930" text-anchor="middle" fill="#c9a962" fill-opacity="0.55" font-family="Georgia, serif" font-size="18" letter-spacing="6">SATIN  ·  AG-W-8044</text>
+</svg>

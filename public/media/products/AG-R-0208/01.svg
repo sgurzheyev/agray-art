@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="SOLSTICE  ·  AG-R-0208">
+  <rect width="800" height="1000" fill="#050505"/>
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#1a160c"/>
+      <stop offset="70%" stop-color="#050505"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e4c87a"/>
+      <stop offset="45%" stop-color="#c9a962"/>
+      <stop offset="100%" stop-color="#8a7340"/>
+    </linearGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="0.6"/>
+    </filter>
+  </defs>
+  <rect width="800" height="1000" fill="url(#g)"/>
+  <rect x="28" y="28" width="744" height="944" fill="none" stroke="#c9a962" stroke-opacity="0.22"/>
+  <rect x="36" y="36" width="728" height="928" fill="none" stroke="#c9a962" stroke-opacity="0.08"/>
+  <ellipse cx="400" cy="430" rx="150" ry="150" fill="none" stroke="url(#gold)" stroke-width="22"/>
+    <ellipse cx="400" cy="430" rx="137.9" ry="137.9" fill="none" stroke="#e4c87a" stroke-opacity="0.35" stroke-width="1.2"/><g transform="translate(400 272)">
+        <polygon points="0,-48 32,-12 18,28 -18,28 -32,-12" fill="url(#gold)" opacity="0.95"/>
+        <polygon points="0,-48 16,-12 0,10 -16,-12" fill="#e4c87a" opacity="0.55"/>
+      </g>
+  <text x="400" y="930" text-anchor="middle" fill="#c9a962" fill-opacity="0.55" font-family="Georgia, serif" font-size="18" letter-spacing="6">SOLSTICE  ·  AG-R-0208</text>
+</svg>
