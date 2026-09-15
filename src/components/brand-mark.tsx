@@ -24,7 +24,7 @@ export function BrandMark({
   }, []);
 
   return (
-    <span className="brand-mark-wrap inline-flex shrink-0">
+    <span className="brand-mark-wrap inline-flex shrink-0 bg-transparent">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         ref={ref}
@@ -36,6 +36,7 @@ export function BrandMark({
         decoding="async"
         {...(priority ? { fetchPriority: "high" as const } : {})}
         className={classNames("brand-mark bg-transparent object-contain", className)}
+        style={{ background: "transparent" }}
       />
     </span>
   );

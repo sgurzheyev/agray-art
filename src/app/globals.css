@@ -223,12 +223,19 @@ a {
   }
 }
 
+.brand-mark-wrap {
+  background: transparent;
+}
+
 .brand-mark {
   display: block;
+  background: transparent;
   transform-origin: 50% 50%;
   transform-style: preserve-3d;
   backface-visibility: visible;
   will-change: transform;
+  /* Same keying as the large hero AG: black field drops out on the dark header. */
+  mix-blend-mode: screen;
 }
 
 .btn-glass,

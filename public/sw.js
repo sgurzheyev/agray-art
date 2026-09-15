@@ -1,4 +1,4 @@
-const CACHE = "agray-v5";
+const CACHE = "agray-v6";
 const PRECACHE = [
   "/offline",
   "/icons/icon-192.png",

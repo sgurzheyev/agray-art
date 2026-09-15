@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "generate:media": "python3 scripts/generate-icons.py && node scripts/generate-media.mjs",
+    "generate:media": "python3 scripts/punch-ag-logo.py && python3 scripts/generate-icons.py && node scripts/generate-media.mjs",
     "db:generate-seed": "npx tsx scripts/generate-seed.ts"
   },
   "dependencies": {
