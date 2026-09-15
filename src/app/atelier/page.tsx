@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_TELEGRAM,
+  CONTACT_TELEGRAM_HREF,
+} from "@/lib/contacts";
 
 export const metadata: Metadata = {
   title: "Ателье",
@@ -45,6 +52,22 @@ export default function AtelierPage() {
             <li>Подбор цепи к кресту и иконе</li>
             <li>Гравировка, реставрация, переполировка</li>
             <li>Линия SPORT — замена каучука</li>
+            <li>
+              Telegram{" "}
+              <a className="text-silver hover:text-silver-bright" href={CONTACT_TELEGRAM_HREF} target="_blank" rel="noreferrer">
+                {CONTACT_TELEGRAM}
+              </a>
+            </li>
+            <li>
+              <a className="text-silver hover:text-silver-bright" href={`tel:${CONTACT_PHONE}`}>
+                {CONTACT_PHONE_DISPLAY}
+              </a>
+            </li>
+            <li>
+              <a className="text-silver hover:text-silver-bright" href={`mailto:${CONTACT_EMAIL}`}>
+                {CONTACT_EMAIL}
+              </a>
+            </li>
           </ul>
           <Link
             href="/catalog"

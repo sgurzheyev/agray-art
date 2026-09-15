@@ -1,6 +1,17 @@
 import Link from "next/link";
 import { BrandName } from "@/components/brand-name";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_TELEGRAM,
+  CONTACT_TELEGRAM_HREF,
+  SITE_DOMAIN,
+  SITE_ORIGIN,
+} from "@/lib/contacts";
 import type { Category } from "@/lib/types";
+
+const linkClass = "text-ivory/85 transition-colors hover:text-silver";
 
 export function Footer({ categories }: { categories: Category[] }) {
   return (
@@ -9,7 +20,7 @@ export function Footer({ categories }: { categories: Category[] }) {
         <div>
           <BrandName as="p" className="text-2xl text-silver-bright" />
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">
-            Ювелирный дом. Ручная работа, свет на чёрном, зеркало металла. Москва · agray.art
+            Ювелирный дом. Ручная работа, свет на чёрном, зеркало металла. Москва · {SITE_DOMAIN}
           </p>
         </div>
         <div>
@@ -28,9 +39,29 @@ export function Footer({ categories }: { categories: Category[] }) {
           <p className="text-[11px] tracking-[0.28em] text-silver uppercase">Ателье</p>
           <p className="mt-4 text-sm leading-relaxed text-muted">
             Примерка, размер, гравировка, заказ по эскизу.
-            <br />
-            Telegram и почта — в README до подключения домена.
           </p>
+          <ul className="mt-4 space-y-1.5 text-sm">
+            <li>
+              <a className={linkClass} href={CONTACT_TELEGRAM_HREF} target="_blank" rel="noreferrer">
+                Telegram {CONTACT_TELEGRAM}
+              </a>
+            </li>
+            <li>
+              <a className={linkClass} href={`tel:${CONTACT_PHONE}`}>
+                {CONTACT_PHONE_DISPLAY}
+              </a>
+            </li>
+            <li>
+              <a className={linkClass} href={`mailto:${CONTACT_EMAIL}`}>
+                {CONTACT_EMAIL}
+              </a>
+            </li>
+            <li>
+              <a className={linkClass} href={SITE_ORIGIN}>
+                {SITE_DOMAIN}
+              </a>
+            </li>
+          </ul>
           <p className="mt-6 text-xs tracking-widest text-muted/70 uppercase">
             © {new Date().getFullYear()} <BrandName tracking="0.16em" />
           </p>
