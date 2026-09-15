@@ -28,14 +28,14 @@ export function BrandMark({
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         ref={ref}
-        src="/brand/ag-logo.webp"
+        src="/brand/ag-logo-clear.webp"
         alt=""
         aria-hidden="true"
         width={size}
         height={size}
         decoding="async"
         {...(priority ? { fetchPriority: "high" as const } : {})}
-        className={classNames("brand-mark object-contain", className)}
+        className={classNames("brand-mark bg-transparent object-contain", className)}
       />
     </span>
   );
